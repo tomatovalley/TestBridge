@@ -1,17 +1,26 @@
-# -*- coding: utf-8 -*-
+
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from TestBridgeApp.forms import RegUserForm
 
-def RegUser(request):
-  if request.method == 'POST':
-    form = RegUserForm(request.POST)
-    if form.is_valid():
-      cd = form.cleaned_data
-	  # hacer algo aqui
-      return HttpResponseRedirect('/register/ok/')
-  else:
-    form = RegUserForm()
-  return render(request, 'register-user.html', {'form':form})
+
+from django.http.response import HttpResponseForbidden
+from django.views.generic import CreateView
+from TestBridgeApp.forms import RegisterUserForm
+from django.http import HttpResponse
+
+class RegisterUserView(CreateView):
+  form_class = RegisterUserForm
+  template_name = "TestBridgeApp/register-user.html"
+
+  def dispatch(self, request,*args,**kwargs):
+    if request.user.is_authenticated():
+      return HttpResponseForbidden()
+    return super(RegisterUserView, self).dispatch(request,*args,**kwargs)
+
+  def form_valid(self, form):
+    user = form.save(commit=False)
+    user.save()
+
+    return HttpResponse('User registered')
+

@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'TestBridge.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'testbridge',
+		'USER': 'tbadmin',
+		'PASSWORD': '******',
+		'HOST': 'localhost',
+		'PORT': '',
     }
 }
 
@@ -120,6 +124,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#new MIF 05/Dic/2018
+STATICFILES_DIRS = [
+     os.path.join(BASE_DIR, 'static')
+]
 
 #new MIF 28/nov/2018
 MEDIA_ROOT = 'media/'

@@ -1,15 +1,19 @@
-from django import forms
+from django import forms 
+from TestBridgeApp.models import tb_user
+from django.db import models
 
-class RegUserForm(forms.Form):
-  firt_name = forms.CharField()
-  last_name = forms.CharField()
-  email = forms.EmailField()
-  password = forms.CharField(widget=forms.PasswordInput())
-  username = forms.CharField()
-  user_type = forms.CharField()
-  company = forms.CharField(required=False)
-  phone_number = forms.CharField()
-  address = forms.CharField()
-  city = forms.CharField()
-  state = forms.CharField()
-  country = forms.CharField()
+class RegisterUserForm(forms.ModelForm):
+  #password2 = forms.CharField(label='Confirm password',max_length=100)
+
+  class Meta:
+   model = tb_user
+   fields = '__all__'
+   exclude = ('creation_date','updated_date','enabled')
+   
+
+  # password validation
+  #def clean_password(self):
+  #  cd = self.cleaned_data
+  #  if cd['password2'] != cd['password']:
+  #     raise ValidacionError("Password don't match")
+  #  return cd['password']
