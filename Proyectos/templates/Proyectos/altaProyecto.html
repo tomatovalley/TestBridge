@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+
+{% block contenido %}
+
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="#">Pagina principal</a>
+    <a class="breadcrumb-item" href="{% url 'proyectos:proyectos' %}">Menu proyectos</a>
+    <span class="breadcrumb-item active">Alta del proyecto</span>
+</nav>
+
+<br>
+<h1>Alta del proyecto</h1>
+<br>
+
+
+<form method="post">
+    {% csrf_token %}
+
+    {% for hidden in form.hidden_fields %}
+    {{hidden}}
+    {% endfor %}
+
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            <label for="{{form.nombreDelProyecto.id_for_label}}">{{form.nombreDelProyecto.label}}</label>
+            {{form.nombreDelProyecto}}
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="{{form.tipo.id_for_label}}">{{form.tipo.label}}</label>
+            {{form.tipo}}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            <label for="{{form.ubicacion.id_for_label}}">{{form.ubicacion.label}}</label>
+            {{form.ubicacion}}
+        </div>
+        <div class="form-group col-md-4">
+            <label for="{{form.dispositivo.id_for_label}}">{{form.dispositivo.label}}</label>
+            {{form.dispositivo}}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            <label for="{{form.caracteristicas.id_for_label}}">{{form.caracteristicas.label}}</label>
+            {{form.caracteristicas}}
+        </div>
+
+        <div class="form-group col-md-2">
+            <label for="{{form.topePresupuestal.id_for_label}}">{{form.topePresupuestal.label}}</label>
+            {{form.topePresupuestal}}
+        </div>
+        <div class="form-group col-md-2">
+            <label for="{{form.pagoPorBug.id_for_label}}">{{form.pagoPorBug.label}}</label>
+            {{form.pagoPorBug}}
+        </div>
+    </div>
+    <button type="submit" name="submit" class="btn btn-primary">Guardar proyecto</button>
+</form>
+
+{% endblock contenido %}

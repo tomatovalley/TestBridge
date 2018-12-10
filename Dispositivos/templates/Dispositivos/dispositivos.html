@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+
+{% block contenido %}
+    
+
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="#">Pagina principal</a>
+    <a class="breadcrumb-item" href="{% url 'dispositivos:dispositivos' %}">Menu dispositivos</a>
+    <span class="breadcrumb-item active">Lista de dispositivos</span>
+</nav>
+    
+<br>
+<h1>Lista de dispositivos</h1>
+<br>
+
+<table class="table">
+    <thead>
+        <th>Dispositivo</th>
+        <th>Categoria</th>
+        <th colspan="3">Acciones</th>
+    </thead>
+    <tbody>
+        {% for x in dispositivos %}
+            <tr>
+                <td>{{x.nombreDelDispositivo}}</td>
+                <td>{{x.categoria}}</td>
+                <td><a class="btn btn-secondary" href="{% url 'dispositivos:consulta' x.id %}">Ver a detalle</a></td>
+                <td><a class="btn btn-info" href="{% url 'dispositivos:modificacion' x.id %}">Editar</a></td>
+                <td><a class="btn btn-danger" href="{% url 'dispositivos:eliminar' x.id %}">Eliminar</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}
+    
