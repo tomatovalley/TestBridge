@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'testbridge',
 		'USER': 'tbadmin',
-		'PASSWORD': '******',
+		'PASSWORD': '',
 		'HOST': 'localhost',
 		'PORT': '',
     }
@@ -135,3 +135,7 @@ MEDIA_ROOT = 'media/'
 
 #new MIF 28/nov/2018
 MEDIA_URL = 'http://localhost:8001/media/'
+
+#new MIF 10/dic/2018
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

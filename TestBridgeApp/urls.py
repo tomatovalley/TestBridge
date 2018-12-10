@@ -1,7 +1,9 @@
 
 from django.conf.urls import url
-from TestBridgeApp.views import RegisterUser
+from TestBridgeApp import views
+
 
 urlpatterns = [
-     url(r'register/',RegisterUser, name='register_user'),
+     url(r'^contact$', views.contact, name='contact'),
+     url(r'^', views.home, name='home'),
 ]

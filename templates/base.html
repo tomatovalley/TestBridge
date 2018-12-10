@@ -1,18 +1,55 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="UTF-8">
-	<title>{% block title %}
-	{%endblock %} </title>
+	<title>
+		{% block title %}
+		{%endblock %}
+	</title>
+	<link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-{% block heading %}
+	<div id="wrapper">
 
-{% endblock %}
+		<header id="header">
+		<div id="logo"><img src="{% static 'logo.jpg' %}" width="150" height="50" alt="" />
+			<span style="float: right;">
+			{% if user.is_authenticated %}
+			  Hello, {{ user.username }}!!.
+			  <a href="{% url 'logout' %}">logout</a>.
+			{% else %}
+			  <p>You are not logged in</p>
+			  <a href="{% url 'login' %}">Log in</a>.
+			{% endif %}
+			</span>
+		</div>
+		<div id="topbanner"><img src="{% static 'top_banner.png' %}" width="800" height="100" alt=""/></div>
+		</header>
 
-{% block content %}
+		<aside id="leftsidebar">
+			<nav id="nav">
+			<ul>
 
-{% endblock %}
+				<li><a href="/">Home</a></li>
+				{% block sidenav %}
+				{% endblock %}
+				<li><a href="/contact">Contact Us</a></li>
+			</ul>
+			</nav>
+		</aside>
+
+		<section id="main">
+			{% block content %}
+			<h1>Welcome!</h1>
+			<p>This is the site template</p>
+			{% endblock %}
+		</section>
+
+		<footer id="footer">Copyright &copy; 2017 TestBridge</footer>
+
+	</div>
 </body>
 </html>
