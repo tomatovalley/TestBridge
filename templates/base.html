@@ -36,7 +36,7 @@
 				<li><a href="/">Home</a></li>
 				{% block sidenav %}
 					{% if user.is_authenticated %}
-					<li><a href="{% url 'testbridgeapp:profile' user.username %}">Profile</a></li>
+					<li><a href="{% url 'usersapp:user_profile' user.username %}">Profile</a></li>
 					{% endif %}
 					{% endblock %}
 				<li><a href="/contact">Contact Us</a></li>

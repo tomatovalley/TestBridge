@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'TestBridgeApp', #new
+    'TestBridgeApp',
+    'Users',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'testbridge',
 		'USER': 'tbadmin',
-		'PASSWORD': '',
+		'PASSWORD': 'tb4dm1n',
 		'HOST': 'localhost',
 		'PORT': '',
     }

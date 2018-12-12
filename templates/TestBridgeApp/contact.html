@@ -11,6 +11,7 @@ Contact Us
 	<p class="success"> Your message was submitted successfully. Thank you. </p>
 {% else %}
   <form action="" method="post" novalidate>
+  {% csrf_token %}
   <table>
 	{{ form.as_table }}
 	<tr>
@@ -18,7 +19,7 @@ Contact Us
 		<td><input type="submit" value="Submit"></td>
 	</tr>
   </table>
-  {% csrf_token %}
+  
   </form>
 {% endif %}
 {% endblock %}
