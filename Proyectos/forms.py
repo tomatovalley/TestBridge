@@ -15,3 +15,15 @@ class ProyectoForm(forms.ModelForm):
             'topePresupuestal':forms.TextInput(attrs={'class':'form-control'}),
             'pagoPorBug':forms.TextInput(attrs={'class':'form-control'}),
         }
+
+class ModificarProyectoForm(forms.ModelForm):
+    class Meta:
+        model=Proyecto
+        fields=['nombreDelProyecto','ubicacion','caracteristicas','pagoPorBug']
+
+        widgets={
+            'nombreDelProyecto':forms.HiddenInput(),
+            'ubicacion':forms.TextInput(attrs={'class':'form-control'}),
+            'caracteristicas':forms.Textarea(attrs={'class':'form-control', 'rows':'5'}),
+            'pagoPorBug':forms.TextInput(attrs={'class':'form-control'}),
+        }

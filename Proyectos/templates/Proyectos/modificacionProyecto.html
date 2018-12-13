@@ -17,28 +17,9 @@
         {% endfor %}
         
             <div class="form-group">
-                <label for="{{form.nombreDelProyecto.id_for_label}}" class="col-sm-2 control-label">{{form.nombreDelProyecto.label}}</label>
-                <div class="col-sm-8">
-                    {{form.nombreDelProyecto}}
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="{{form.tipo.id_for_label}}" class="col-sm-2 control-label">{{form.tipo.label}}</label>
-                <div class="col-sm-8">
-                    {{form.tipo}}
-                </div>
-            </div>
-            <div class="form-group">
                 <label for="{{form.ubicacion.id_for_label}}" class="col-sm-2 control-label">{{form.ubicacion.label}}</label>
                 <div class="col-sm-8">
                     {{form.ubicacion}}
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="{{form.dispositivo.id_for_label}}" class="col-sm-2 control-label">{{form.dispositivo.label}}</label>
-                <div class="col-sm-8">
-                    {{form.dispositivo}}
                 </div>
             </div>
 
@@ -50,17 +31,12 @@
             </div>
 
             <div class="form-group">
-                <label for="{{form.topePresupuestal.id_for_label}}" class="col-sm-2 control-label">{{form.topePresupuestal.label}}</label>
-                <div class="col-sm-8">
-                    {{form.topePresupuestal}}
-                </div>
-            </div>
-            <div class="form-group">
                 <label for="{{form.pagoPorBug.id_for_label}}" class="col-sm-2 control-label">{{form.pagoPorBug.label}}</label>
                 <div class="col-sm-8">
                     {{form.pagoPorBug}}
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="col-sm-ofset-2 col-sm-8">
                     <input class="btn btn-primary pull-right" type="submit" name="submit" value="Modificar">

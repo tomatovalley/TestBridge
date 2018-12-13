@@ -12,3 +12,14 @@ class DispositivoForm(forms.ModelForm):
             'sistemaOperativo':forms.Select(attrs={'class':'form-control'}),
             'version':forms.TextInput(attrs={'class':'form-control'}),
         }
+
+class EditarDispositivoForm(forms.ModelForm):
+    class Meta:
+        model=Dispositivo
+        fields=['nombreDelDispositivo','sistemaOperativo','version']
+
+        widgets={
+            'nombreDelDispositivo':forms.TextInput(attrs={'class':'form-control'}),
+            'sistemaOperativo':forms.Select(attrs={'class':'form-control'}),
+            'version':forms.TextInput(attrs={'class':'form-control'}),
+        }
