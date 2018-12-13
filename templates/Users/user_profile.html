@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+
+{% block content %}
+{% if request.user.is_authenticated and user_form.username.value == request.user.username %}
+	{% if submitted %}
+		<p class="success"> Your changes were submitted successfully. </p>
+	{% endif %}
+		<form id="user_form" method="post" action="">
+		{% csrf_token %}
+		  <table>
+			{{ user_form.as_table }}
+			{{ profile_form.as_table }}
+			<tr>
+				<td></td>
+				<td><input type="submit" value="save"></td>
+			</tr>
+		  </table>
+		</form>
+		<a href="{% url 'usersapp:user_delete' user_form.username.value%}"> Desactivar Cuenta</a>
+{% else %}
+u cannot edit that profile - its not yours...
+{% endif %}
+
+{% endblock %}
+

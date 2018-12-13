@@ -16,8 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^', include('django.contrib.auth.urls')),
+    url(r'^', include('Users.urls', namespace='usersapp')),
+    url(r'^', include('TestBridgeApp.urls', namespace='testbridgeapp')),
     url(r'^projects/', include('Projects.urls',namespace='projects')),
     url(r'^devices/', include('Devices.urls',namespace='devices')),
 ]
