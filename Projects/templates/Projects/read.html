@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+
+
+{% block main %}
+    
+
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="#">Main</a>
+    <a class="breadcrumb-item" href="{% url 'projects:projects' %}">Projects</a>
+    <span class="breadcrumb-item active">Query</span>
+</nav>
+    
+<br>
+<h1>Details of the project</h1>
+<br>
+
+<h4>Project:</h4>
+<p>{{projects.project}}</p>
+<br>
+
+<h4>Type of project:</h4>
+<p>{{projects.type}}</p>
+<br>
+
+<h4>Location:</h4>
+<a href="{{project.location}}">{{projects.location}}</a>
+<br>
+<br>
+
+<h4>Device:</h4>
+<p>{{projects.device}}</p>
+<br>
+
+<h4>Features:</h4>
+<p>{{projects.features}}</p>
+<br>
+
+<h4>Budget:</h4>
+<p>{{projects.budget}}</p>
+<br>
+
+<h4>Pay per bug:</h4>
+<p>{{projects.payPerBug}}</p>
+<br>
+
+{% endblock main %}
+    

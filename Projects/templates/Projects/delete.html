@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block main %}
+<nav class="breadcrumb">
+        <a class="breadcrumb-item" href="#">Main</a>
+        <a class="breadcrumb-item" href="{% url 'projects:projects' %}">Projects</a>
+        <a class="breadcrumb-item" href="{% url 'projects:list' %}">List of projects</a>
+        <span class="breadcrumb-item active">Delete</span>
+    </nav>
+<br>
+<div>
+    <form method="post" class="form-horizontal">
+        {% csrf_token %}
+        
+        <p class="align-center text-danger">Are you sure you want to delete the project {{project.project}}?</p>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+                <input class="btn btn-danger pull-right" type="submit" name="submit" value="Yes">
+                <a class="btn btn-secondary" href="{% url 'projects:list' %}">No</a>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock main %}
