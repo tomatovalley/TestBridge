@@ -11,6 +11,7 @@ Profile
 		<p class="success"> Your changes were submitted successfully. </p>
 	{% endif %}
 		<form id="user_form" method="post" action="">
+		{% csrf_token %}
 		  <table>
 			{{ user_form.as_table }}
 			{{ profile_form.as_table }}
@@ -19,8 +20,8 @@ Profile
 				<td><input type="submit" value="save"></td>
 			</tr>
 		  </table>
-		  {% csrf_token %}
 		</form>
+		<a href="{% url 'usersapp:user_delete' user_form.username.value%}"> Desactivar Cuenta</a>
 {% else %}
 u cannot edit that profile - its not yours...
 {% endif %}
