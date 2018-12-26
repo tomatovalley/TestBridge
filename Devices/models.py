@@ -24,5 +24,5 @@ class Device(models.Model):
     os=models.CharField(max_length=50, choices=OS_DEVICE)
     version=models.CharField(max_length=200)
 
-    def __unicode__(self):
-        return u'{}'.format(self.device)
+    def __str__(self):
+        return self.device

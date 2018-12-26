@@ -7,7 +7,8 @@
 <nav class="breadcrumb">
     <a class="breadcrumb-item" href="#">Main</a>
     <a class="breadcrumb-item" href="{% url 'projects:projects' %}">Projects</a>
-    <span class="breadcrumb-item active">Query</span>
+    <a class="breadcrumb-item" href="{% url 'projects:list' %}">List of projects</a>
+    <span class="breadcrumb-item active">Details of the project</span>
 </nav>
     
 <br>
@@ -16,6 +17,10 @@
 
 <h4>Project:</h4>
 <p>{{projects.project}}</p>
+<br>
+
+<h4>Status:</h4>
+<p>{{projects.status}}</p>
 <br>
 
 <h4>Type of project:</h4>
@@ -28,7 +33,13 @@
 <br>
 
 <h4>Device:</h4>
-<p>{{projects.device}}</p>
+<p>
+    <ul>
+    {% for d in device %}
+        <li>{{d.device}}</li>
+    {% endfor %}
+    </ul>
+</p>
 <br>
 
 <h4>Features:</h4>

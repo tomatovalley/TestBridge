@@ -25,7 +25,6 @@ def query(request, pk):
 
 class CreateDevices(SuccessMessageMixin, CreateView):
     model=Device
-    success_url = '/list/'
     success_message = "The device %(device)s has been created"
     form_class=DeviceForm
     template_name='Devices/create.html'
@@ -35,7 +34,6 @@ class CreateDevices(SuccessMessageMixin, CreateView):
 
 class EditDevices(SuccessMessageMixin, UpdateView):
     model=Device
-    success_url = '/list/'
     success_message = "The device %(device)s has been modified"
     form_class=EditDeviceForm
     template_name='Devices/update.html'
@@ -45,7 +43,6 @@ class EditDevices(SuccessMessageMixin, UpdateView):
 
 class DeleteDevices(SuccessMessageMixin, DeleteView):
     model=Device
-    success_url = '/list/'
     success_message = "The device %(device)s has been removed"
     form_class=DeviceForm
     template_name='devices/delete.html'

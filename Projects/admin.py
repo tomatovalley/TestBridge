@@ -7,6 +7,6 @@ from Projects.models import Project
 
 # Register your models here.
 class ProjectAdmin(admin.ModelAdmin):
-    list_display=('project','type','device')
+    list_display=('project','type')
 
 admin.site.register(Project,ProjectAdmin)

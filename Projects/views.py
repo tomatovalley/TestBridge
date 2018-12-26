@@ -21,11 +21,11 @@ def list(request):
 
 def query(request, pk):
     project=Project.objects.get(id=pk)
-    return render(request, template_name='Projects/read.html',context={'projects':project})
+    device=Project.objects.get(pk=pk).device.all()
+    return render(request, template_name='Projects/read.html',context={'projects':project, 'device':device})
 
 class CreateProject(SuccessMessageMixin, CreateView):
     model=Project
-    success_url = '/list/'
     success_message = "The project %(project)s has been created"
     form_class=ProjectForm
     template_name='Projects/create.html'
@@ -35,7 +35,6 @@ class CreateProject(SuccessMessageMixin, CreateView):
 
 class EditProject(SuccessMessageMixin, UpdateView):
     model=Project
-    success_url = '/list/'
     success_message = "The project %(project)s has been modified"
     form_class=EditProjectForm
     template_name='Projects/update.html'
@@ -45,7 +44,6 @@ class EditProject(SuccessMessageMixin, UpdateView):
 
 class DeleteProject(SuccessMessageMixin, DeleteView):
     model=Project
-    success_url = '/list/'
     success_message = "The project %(project)s has been removed"
     form_class=ProjectForm
     template_name='Projects/delete.html'

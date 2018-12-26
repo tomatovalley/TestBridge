@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-
+from Devices.models import Device
 # Create your models here.
 class Project(models.Model):
 
@@ -11,18 +11,24 @@ class Project(models.Model):
         ('Mobile', 'Mobile'),
     )
 
-    DEVICES_TEST = (
-        ('Computer', 'Computer'),
-        ('Smartphone', 'Smartphone'),
+    STATUS_PROJECT = (
+        ('Active', 'Active'),
+        ('Pause', 'Pause'),
+        ('Inactive', 'Inactive'),
     )
 
     project=models.CharField(max_length=70)
     type=models.CharField(max_length=30, choices=TYPES_DEVELOPMENT)
     location=models.URLField(max_length=300)
-    device=models.CharField(max_length=50, choices=DEVICES_TEST)
+    device=models.ManyToManyField(Device)
     features=models.CharField(max_length=400)
     budget=models.DecimalField(max_digits=10, decimal_places=2)
     payPerBug=models.DecimalField(max_digits=10, decimal_places=2)
+    status=models.CharField(max_length=50, choices=STATUS_PROJECT, default="Active")
 
     def __unicode__(self):
         return u'{}'.format(self.project)
+
+    @staticmethod
+    def device_list():
+       return Project.device.all()
