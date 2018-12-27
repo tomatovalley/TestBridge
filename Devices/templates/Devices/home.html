@@ -1,0 +1,24 @@
+{% extends 'Devices/base.html' %}
+
+{% block main %}
+
+<div class="container">
+    <main role="main">
+        <div class="jumbotron">
+            <div class="col-sm-8 mx-auto">
+                <h1>Devices</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ab iusto temporibus distinctio quis ea sit fugiat atque provident cupiditate. Eligendi excepturi obcaecati est ducimus, quisquam beatae magni commodi aliquam!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe illum aspernatur adipisci facilis tempora magnam inventore beatae tenetur voluptas cum, magni cupiditate esse dolorum quam, nobis distinctio sunt exercitationem molestiae!
+                </p>
+                <p>
+                    <a class="btn btn-primary" href="{% url 'devices:create' %}">Register a device</a>
+                    <a class="btn btn-success" href="{% url 'devices:list' %}">See your devices</a>
+                </p>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock main %}
