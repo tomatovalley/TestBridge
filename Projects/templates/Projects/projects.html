@@ -1,0 +1,47 @@
+{% extends 'Projects/base.html' %}
+
+
+{% block main %}
+    
+
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="#">Main</a>
+    <a class="breadcrumb-item" href="{% url 'projects:projects' %}">Projects</a>
+    <span class="breadcrumb-item active">List of projects</span>
+</nav>
+    
+<br>
+<h1>List of projects</h1>
+<br>
+
+{% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>{{ message }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% endfor %}
+{% endif %}
+
+<table class="table">
+    <thead>
+        <th>Project</th>
+        <th>Type</th>
+        <th colspan="3">Actions</th>
+    </thead>
+    <tbody>
+        {% for x in projects %}
+            <tr>
+                <td>{{x.project}}</td>
+                <td>{{x.type}}</td>
+                <td><a class="btn btn-secondary" href="{% url 'projects:query' x.id %}">Details</a></td>
+                <td><a class="btn btn-info" href="{% url 'projects:update' x.id %}">Edit</a></td>
+                <td><a class="btn btn-danger" href="{% url 'projects:delete' x.id %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock main %}
+    
