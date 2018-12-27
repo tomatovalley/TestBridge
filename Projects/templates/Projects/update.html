@@ -1,0 +1,54 @@
+{% extends 'Projects/base.html' %}
+
+{% block main %}
+<nav class="breadcrumb">
+        <a class="breadcrumb-item" href="#">Main</a>
+        <a class="breadcrumb-item" href="{% url 'projects:projects' %}">Projects</a>
+        <a class="breadcrumb-item" href="{% url 'projects:list' %}">List of projects</a>
+        <span class="breadcrumb-item active">Update</span>
+    </nav>
+<br>
+<div>
+    <form method="post" class="form-horizontal">
+        {% csrf_token %}
+        
+        {% for hidden in form.hidden_fields %}
+            {{hidden}}
+        {% endfor %}
+
+            <div class="form-group">
+                <label for="{{form.status.id_for_label}}" class="col-sm-2 control-label">{{form.status.label}}</label>
+                <div class="col-sm-8">
+                    {{form.status}}
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label for="{{form.location.id_for_label}}" class="col-sm-2 control-label">{{form.location.label}}</label>
+                <div class="col-sm-8">
+                    {{form.location}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="{{form.features.id_for_label}}" class="col-sm-2 control-label">{{form.features.label}}</label>
+                <div class="col-sm-8">
+                    {{form.features}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="{{form.payPerBug.id_for_label}}" class="col-sm-2 control-label">{{form.payPerBug.label}}</label>
+                <div class="col-sm-8">
+                    {{form.payPerBug}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-ofset-2 col-sm-8">
+                    <input class="btn btn-primary pull-right" type="submit" name="submit" value="Modify">
+                </div>
+            </div>
+    </form>
+</div>
+{% endblock main %}
