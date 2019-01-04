@@ -1,16 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}
-Page Not Found
+{% block main %}
+    <main class="app-content">
+      <div class="page-error tile">
+        <h1><i class="fa fa-exclamation-circle"></i> Error 404: Page not found</h1>
+        <p>The page you have requested is not found.</p>
+        <p><a class="btn btn-primary" href="javascript:window.history.back();">Go Back</a></p>
+      </div>
+    </main>
 {% endblock %}
-
-
-{% block content %}
-
-<h1>Aw Crap!</h1>
-<p>Not sure where you were going there mate, want to try
-again? </p>
-<p>Thanks.</p>
-
-{% endblock %}
-
