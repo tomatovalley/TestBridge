@@ -1,26 +1,31 @@
-{% extends 'Devices/base.html' %}
+{% extends 'base.html' %}
 
 {% block main %}
-<nav class="breadcrumb">
-        <a class="breadcrumb-item" href="#">Main</a>
-        <a class="breadcrumb-item" href="{% url 'devices:devices' %}">Devices</a>
-        <a class="breadcrumb-item" href="{% url 'devices:list' %}">List of devices</a>
-        <span class="breadcrumb-item active">Delete</span>
-    </nav>
-<br>
 
-<div>    
-    <form method="post" class="form-horizontal">
-        {% csrf_token %}
-        
-        <p class="align-center text-danger">Are you sure you want to delete the device {{device.device}}?</p>
-
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-8">
-                <input class="btn btn-danger pull-right" type="submit" name="submit" value="Yes">
-                <a class="btn btn-secondary" href="{% url 'devices:list' %}">No</a>
-            </div>
-        </div>
-    </form>
+<div class="app-title">
+    <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'devices:list' %}">List of devices</a></li>
+        <li class="breadcrumb-item"><span class="breadcrumb-item active">Delete device</span></li>
+    </ul>
 </div>
+
+<div class="col-md-12">
+        <div class="tile">
+            <form method="post" class="form-horizontal">
+                    {% csrf_token %}
+            
+                    <p class="align-center text-danger">Are you sure you want to delete the device {{device.device}}?</p>
+            
+                    <div class="form-group">
+                        <input class="btn btn-danger" type="submit" name="submit" value="Yes">
+                        <a class="btn btn-secondary" href="{% url 'devices:list' %}">No</a>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+
+
 {% endblock main %}
