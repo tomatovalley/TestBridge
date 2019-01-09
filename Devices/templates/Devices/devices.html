@@ -34,7 +34,7 @@
                     <thead>
                         <th>Device</th>
                         <th>Category</th>
-                        <th colspan="3">Actions</th>
+                        <th colspan="2">Actions</th>
                     </thead>
                     <tbody>
                         {% for x in devices %}
@@ -44,9 +44,6 @@
                             <td><a class="btn btn-secondary" href="{% url 'devices:query' x.id %}"><i class="fa fa-file-text-o"
                                         aria-hidden="true"></i>
                                     Details</a></td>
-                            <td><a class="btn btn-info" href="{% url 'devices:update' x.id %}"><i class="fa fa-pencil-square-o"
-                                        aria-hidden="true"></i>
-                                    Edit</a></td>
                             <td><a class="btn btn-danger" href="{% url 'devices:delete' x.id %}"><i class="fa fa-times"
                                         aria-hidden="true"></i>Delete</a></td>
                         </tr>
