@@ -31,12 +31,13 @@
         <p>{{devices.os}}</p>
         <br>
         
-        <h4>Version:</h4>
+        <h4>OS Version:</h4>
         <p>{{devices.version}}</p>
         <br>
 
         <div class="tile-footer">
             <a class="btn btn-secondary" href="{% url 'devices:list' %}"><i class="fa fa-fw fa-lg fa-arrow-circle-left"></i>Back</a>
+            <a class="btn btn-info ml-2" href="{% url 'devices:update' devices.id %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
         </div>
 
     </div>

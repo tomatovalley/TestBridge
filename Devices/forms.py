@@ -2,6 +2,7 @@ from django import forms
 from Devices.models import Device
 
 class DeviceForm(forms.ModelForm):
+    version=forms.CharField(label="OS Version",widget=forms.TextInput(attrs={'class':'form-control'}))
     class Meta:
         model=Device
         fields='__all__'
@@ -10,10 +11,10 @@ class DeviceForm(forms.ModelForm):
             'device':forms.TextInput(attrs={'class':'form-control'}),
             'category':forms.Select(attrs={'class':'form-control'}),
             'os':forms.Select(attrs={'class':'form-control'}),
-            'version':forms.TextInput(attrs={'class':'form-control'}),
         }
 
 class EditDeviceForm(forms.ModelForm):
+    version=forms.CharField(label="OS Version",widget=forms.TextInput(attrs={'class':'form-control'}))
     class Meta:
         model=Device
         fields=['device','os','version']
@@ -21,5 +22,4 @@ class EditDeviceForm(forms.ModelForm):
         widgets={
             'device':forms.TextInput(attrs={'class':'form-control'}),
             'os':forms.Select(attrs={'class':'form-control'}),
-            'version':forms.TextInput(attrs={'class':'form-control'}),
         }

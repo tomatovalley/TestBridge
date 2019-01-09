@@ -47,7 +47,7 @@
         <br>
 
         <h4>Features:</h4>
-        <p>{{projects.features}}</p>
+        <p>{{projects.features|linebreaks }}</p>
         <br>
 
         <h4>Budget:</h4>
@@ -60,6 +60,7 @@
 
         <div class="tile-footer">
             <a class="btn btn-secondary" href="{% url 'projects:list' %}"><i class="fa fa-fw fa-lg fa-arrow-circle-left"></i>Back</a>
+            <a class="btn btn-info ml-2" href="{% url 'projects:update' projects.id %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
         </div>
     </div>
 </div>
