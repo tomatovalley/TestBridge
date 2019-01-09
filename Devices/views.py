@@ -12,8 +12,6 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 
 # Create your views here.
-def home(request):
-    return render(request, template_name='Devices/home.html')
 
 def list(request):
     devices=Device.objects.all()
