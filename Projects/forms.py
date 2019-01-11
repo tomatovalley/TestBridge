@@ -7,6 +7,7 @@ class ProjectForm(forms.ModelForm):
         fields='__all__'
 
         widgets={
+            'user':forms.HiddenInput(),
             'project':forms.TextInput(attrs={'class':'form-control'}),
             'type':forms.Select(attrs={'class':'form-control'}),
             'location':forms.TextInput(attrs={'class':'form-control'}),

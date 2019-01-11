@@ -11,10 +11,13 @@ from django.core.urlresolvers import reverse
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+
 # Create your views here.
 
 def list(request):
-    projects=Project.objects.all()
+    projects=Project.objects.filter(user=request.user)
     return render(request, template_name='Projects/projects.html',context={'projects':projects})
 
 def query(request, pk):
@@ -22,11 +25,16 @@ def query(request, pk):
     device=Project.objects.get(pk=pk).device.all()
     return render(request, template_name='Projects/read.html',context={'projects':project, 'device':device})
 
-class CreateProject(SuccessMessageMixin, CreateView):
+class CreateProject(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model=Project
     success_message = "The project %(project)s has been created"
     form_class=ProjectForm
     template_name='Projects/create.html'
+
+    def get_initial(self):
+        return {
+             'user': self.request.user
+        }
 
     def get_success_url(self):
         return reverse('projects:list')

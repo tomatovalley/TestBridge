@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.contrib.auth.models import User
+from django.conf import settings
 from django.db import models
 from Devices.models import Device
 # Create your models here.
@@ -17,6 +19,7 @@ class Project(models.Model):
         ('Inactive', 'Inactive'),
     )
 
+    user=models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
     project=models.CharField(max_length=70)
     type=models.CharField(max_length=30, choices=TYPES_DEVELOPMENT)
     location=models.URLField(max_length=300)
