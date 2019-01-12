@@ -35,6 +35,15 @@
         <p>{{devices.version}}</p>
         <br>
 
+        <h4>Creation date:</h4>
+        <p>{{devices.creationDate}}</p>
+        <br>
+
+        <h4>Update date:</h4>
+        <p>{{devices.updatedDate}}</p>
+        <br>
+
+
         <div class="tile-footer">
             <a class="btn btn-secondary" href="{% url 'devices:list' %}"><i class="fa fa-fw fa-lg fa-arrow-circle-left"></i>Back</a>
             <a class="btn btn-info ml-2" href="{% url 'devices:update' devices.id %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
