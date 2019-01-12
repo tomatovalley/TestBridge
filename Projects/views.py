@@ -13,6 +13,7 @@ from django.contrib import messages
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -20,6 +21,7 @@ def list(request):
     projects=Project.objects.filter(user=request.user)
     return render(request, template_name='Projects/projects.html',context={'projects':projects})
 
+@login_required
 def query(request, pk):
     project=Project.objects.get(id=pk)
     device=Project.objects.get(pk=pk).device.all()

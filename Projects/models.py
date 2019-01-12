@@ -28,6 +28,8 @@ class Project(models.Model):
     budget=models.DecimalField(max_digits=10, decimal_places=2)
     payPerBug=models.DecimalField(max_digits=10, decimal_places=2)
     status=models.CharField(max_length=50, choices=STATUS_PROJECT, default="Active")
+    creationDate=models.DateTimeField(auto_now_add=True)
+    updatedDate=models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         return u'{}'.format(self.project)
