@@ -20,12 +20,12 @@ handler404='TestBridge.views.not_found'
 
 urlpatterns = [
     url(r'^admin', admin.site.urls),
-
-    url(r'^', include('django.contrib.auth.urls')),
-    url(r'^', include('Users.urls', namespace='usersapp')),
-    url(r'^', include('TestBridgeApp.urls', namespace='testbridgeapp')),
-
+    
     url(r'^projects/', include('Projects.urls',namespace='projects')),
     url(r'^devices/', include('Devices.urls',namespace='devices')),
     url(r'^functionalities/', include('Functionalities.urls',namespace='functionalities')),
+    
+    url(r'^', include('django.contrib.auth.urls')),
+    url(r'^', include('Users.urls', namespace='usersapp')),
+    url(r'^', include('TestBridgeApp.urls', namespace='testbridgeapp')),
 ]
