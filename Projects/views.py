@@ -23,7 +23,7 @@ def list(request):
 
 @login_required
 def query(request, pk):
-    project=Project.objects.get(id=pk)
+    project=Project.objects.get(id=pk,user=request.user)
     device=Project.objects.get(pk=pk).device.all()
     return render(request, template_name='Projects/read.html',context={'projects':project, 'device':device})
 
