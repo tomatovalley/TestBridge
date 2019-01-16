@@ -19,7 +19,7 @@ from django.contrib import admin
 handler404='TestBridge.views.not_found'
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin', admin.site.urls),
 
     url(r'^', include('django.contrib.auth.urls')),
     url(r'^', include('Users.urls', namespace='usersapp')),

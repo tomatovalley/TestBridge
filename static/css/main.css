@@ -1990,7 +1990,7 @@ pre code {
 .form-control:focus {
   color: #495057;
   background-color: #FFF;
-  border-color: #009688;
+  border-color: #036169;
   outline: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -2546,14 +2546,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #FFF;
-  background-color: #009688;
-  border-color: #009688;
+  background-color: #036169;
+  border-color: #036169;
 }
 
 .btn-primary:hover {
   color: #FFF;
-  background-color: #007065;
-  border-color: #00635a;
+  background-color: #045659;
+  border-color: #045659;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -13490,7 +13490,7 @@ be a descendant of the grid when it is being dragged.
   min-height: calc(100vh - 50px);
   margin-top: 50px;
   padding: 30px;
-  background-color: #E5E5E5;
+  background-color: #edf4f5;
   -webkit-transition: margin-left 0.3s ease;
   -o-transition: margin-left 0.3s ease;
   transition: margin-left 0.3s ease;
@@ -13536,7 +13536,14 @@ be a descendant of the grid when it is being dragged.
   border-bottom: 1px solid #ddd;
 }
 
-/*----- Componant: Top Navigation Bar ----- */
+.line-head30 {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+}
+.line-headUp {
+  padding-top: 50px;
+}
+/*----- Component: Top Navigation Bar ----- */
 .app-header {
   position: fixed;
   left: 0;
@@ -13546,7 +13553,7 @@ be a descendant of the grid when it is being dragged.
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #009688;
+  background-color: #036169;
   z-index: 1030;
   padding-right: 15px;
 }
@@ -13562,6 +13569,16 @@ be a descendant of the grid when it is being dragged.
     display: none;
   }
 }
+
+.login-content .logo .app-header__SigIn{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 52px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #edf4f5;
+}
+
+
 
 .app-header__logo {
   -webkit-box-flex: 1;
@@ -13583,7 +13600,7 @@ be a descendant of the grid when it is being dragged.
             flex: 0 0 auto;
     display: block;
     width: 230px;
-    background-color: #007d71;
+    background-color: #036169;
   }
 }
 
@@ -13617,7 +13634,7 @@ be a descendant of the grid when it is being dragged.
 
 .app-sidebar__toggle:focus, .app-sidebar__toggle:hover {
   color: #fff;
-  background-color: #00635a;
+  /*background-color: #036169;*/
   text-decoration: none;
 }
 
@@ -13776,7 +13793,7 @@ be a descendant of the grid when it is being dragged.
   top: 0;
   bottom: 0;
   left: 0;
-  padding-top: 70px;
+  padding-top: 51px;
   width: 230px;
   overflow: auto;
   z-index: 10;
@@ -14503,7 +14520,7 @@ be a descendant of the grid when it is being dragged.
 
 .material-half-bg {
   height: 100vh;
-  background-color: #e7e7e7;
+  background-color: #edf4f5;
   position: fixed;
   top: 0;
   left: 0;
@@ -14513,7 +14530,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .material-half-bg .cover {
-  background-color: #009688;
+  background-color: #036169;
   height: 50vh;
 }
 
@@ -15225,4 +15242,8 @@ be a descendant of the grid when it is being dragged.
 
 .user .user-settings label {
   color: #666;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
 }

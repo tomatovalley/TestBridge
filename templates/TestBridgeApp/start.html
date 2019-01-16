@@ -1,0 +1,237 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TestBridge</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/start.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <!--Custom icons?-->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark navbar-style fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">TestBidge</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Resources</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Testing Solutions
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="#">Solution 1</a>
+                <a class="dropdown-item" href="#">Solution 2</a>
+                <a class="dropdown-item" href="#">cheap solution</a>
+                <a class="dropdown-item" href="#">overpriced solution</a>
+                <a class="dropdown-item" href="#">true solution</a>
+              </div>
+            </li><!--
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Blog
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="#">Blog Home 1</a>
+                <a class="dropdown-item" href="#">Blog Home 2</a>
+                <a class="dropdown-item" href="#">Blog Post</a>
+              </div>
+            </li>-->
+            <li class="nav-item">
+                <a class="nav-link" href="#">Create account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Log In</a>
+            </li>
+            <!--
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Other Pages
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="#">Full Width Page</a>
+                <a class="dropdown-item" href="#">Sidebar Page</a>
+                <a class="dropdown-item" href="#">FAQ</a>
+                <a class="dropdown-item" href="#">404</a>
+                <a class="dropdown-item" href="{% url 'login' %}">Registrar</a>
+              </div>
+            </li>-->
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+
+    <header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item active" style="background-image: url('https://www.fotosdeciudades.com/1920x1080/ciudad-de-londres.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>First Slide</h3>
+              <p>This is a description for the first slide.</p>
+            </div>
+          </div>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('https://www.todopaisajes.com/1920x1080/venecia.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Second Slide</h3>
+              <p>This is a description for the second slide.</p>
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('https://www.fotosdeciudades.com/1920x1080/calles-de-washington.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Third Slide</h3>
+              <p>This is a description for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <h1 class="my-4 text-center line-head30">Welcome to Modern Business</h1>
+      <h1 class="my-4 text-center line-headUp">Real Devices. Real People. Real Fast.</h1>
+ 
+
+      <div class="row">
+          <div class="col-lg-6">
+            <h2>Powered by people</h2>
+            <p>Know for sure: skilled testers ensure your app, website, or SaaS platform works as your customers expect, every release.</p>
+            <!--<ul>
+              <li>
+                <strong>Bootstrap v4</strong>
+              </li>
+              <li>jQuery</li>
+              <li>Font Awesome</li>
+              <li>Working contact form with validation</li>
+              <li>Unstyled page elements for easy customization</li>
+            </ul>-->
+            <h2>Devices galore</h2>
+            <p>Real-world experience: our testers have exactly the devices, OS’s, and browsers you need.</p>
+            <h2>Results in as soon as an hour</h2>
+            <p>No more waiting: receive thorough reports with video reproductions in as soon as an hour.</p>
+          </div>
+          <div class="col-lg-6">
+            <img class="img-fluid rounded" src="../../static/images/image1.JPG" alt="">
+          </div>
+        </div>
+
+        <hr>
+        
+        <div class="row mb-4">
+            <div class="col-md-8">
+              <p>Great software companies like Facebook and Google perform thousands of hours of manual QA testing every month. Their secret? Their non-technical employees and then their customers are the testers. Alas, most teams don’t have that luxury. Crowdtesting with test IO levels the playing field, giving your team access to thousands of QA testers who can make sure your software is ready to ship.</p>
+            </div>
+            <div class="col-md-4">
+              <a class="btn btn-lg btn-secondary btn-block" href="#">Learn More</a>
+            </div>
+          </div>
+
+
+
+    </div>
+    <!-- /.container -->
+
+
+
+
+    
+    <!-- Footer -->
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 myCols">
+                    <h5>Get started</h5>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Sign up</a></li>
+                            <li><a href="#">Downloads</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 myCols">
+                        <h5>About us</h5>
+                        <ul>
+                            <li><a href="#">Company Information</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Reviews</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 myCols">
+                        <h5>Support</h5>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Help desk</a></li>
+                            <li><a href="#">Forums</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 myCols">
+                        <h5>Legal</h5>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+            </div>
+            </div>
+            <div class="social-networks">
+                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+                <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; © Copyright 2018-2019 TestBridge</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+  </body>
+
+</html>
