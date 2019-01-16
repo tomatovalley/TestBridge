@@ -6,9 +6,11 @@ from django.core.mail import send_mail, get_connection
 
 from .forms import ContactForm
 
-
 def home(request):
   return render(request,"TestBridgeApp/home.html")
+
+def start(request):
+  return render(request,"TestBridgeApp/start.html")
 
 def contact(request):
   submitted = False
@@ -26,3 +28,4 @@ def contact(request):
     if 'submitted' in request.GET:
       submitted = True
   return render(request, 'TestBridgeApp/contact.html',{'form':form,'submitted': submitted})
+

@@ -11,21 +11,21 @@ from django.core.urlresolvers import reverse
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 
-# Create your views here.
+# Create your views here.s
 
 def list(request):
     devices=Device.objects.all()
-    return render(request, template_name='Devices/Devices.html',context={'devices':devices})
+    return render(request, template_name='Devices.html',context={'devices':devices})
 
 def query(request, pk):
     devices=Device.objects.get(id=pk)
-    return render(request, template_name='Devices/read.html',context={'devices':devices})
+    return render(request, template_name='read.html',context={'devices':devices})
 
 class CreateDevices(SuccessMessageMixin, CreateView):
     model=Device
     success_message = "The device %(device)s has been created"
     form_class=DeviceForm
-    template_name='Devices/create.html'
+    template_name='create.html'
 
     def get_success_url(self):
         return reverse('devices:list')
@@ -34,7 +34,7 @@ class EditDevices(SuccessMessageMixin, UpdateView):
     model=Device
     success_message = "The device %(device)s has been modified"
     form_class=EditDeviceForm
-    template_name='Devices/update.html'
+    template_name='update.html'
 
     def get_success_url(self):
         return reverse('devices:list')
@@ -43,7 +43,7 @@ class DeleteDevices(SuccessMessageMixin, DeleteView):
     model=Device
     success_message = "The device %(device)s has been removed"
     form_class=DeviceForm
-    template_name='devices/delete.html'
+    template_name='delete.html'
 
     def get_context_data(self, **kwargs):
         context_data = super(DeleteDevices, self).get_context_data(**kwargs)

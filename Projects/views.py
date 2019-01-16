@@ -15,7 +15,7 @@ from django.contrib import messages
 
 def list(request):
     projects=Project.objects.all()
-    return render(request, template_name='Projects/projects.html',context={'projects':projects})
+    return render(request, template_name='projects.html',context={'projects':projects})
 
 def query(request, pk):
     project=Project.objects.get(id=pk)
@@ -44,7 +44,7 @@ class DeleteProject(SuccessMessageMixin, DeleteView):
     model=Project
     success_message = "The project %(project)s has been removed"
     form_class=ProjectForm
-    template_name='Projects/delete.html'
+    template_name='delete.html'
 
     def get_context_data(self, **kwargs):
         context_data = super(DeleteProject, self).get_context_data(**kwargs)

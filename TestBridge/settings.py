@@ -140,5 +140,5 @@ MEDIA_ROOT = 'media/'
 MEDIA_URL = 'http://localhost:8001/media/'
 
 #new MIF 10/dic/2018
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/home'
 LOGOUT_REDIRECT_URL = '/'

@@ -3,20 +3,12 @@
 
 {% block main %}
 
-<div class="app-title">
-    <ul class="app-breadcrumb breadcrumb">
-        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><span class="breadcrumb-item active">List of projects</span></li>
-    </ul>
-</div>
-
 <div class="row">
     <div class="clearfix"></div>
     <div class="col-md-12">
         <div class="tile">
 
-            <h3 class="tile-title">List of projects</h3>
+            <h3 class="tile-title">List of devices</h3>
 
             {% if messages %}
             {% for message in messages %}
@@ -32,18 +24,19 @@
             <div class="table-responsive">
                 <table class="table">
                     <thead>
-                        <th>Project</th>
-                        <th>Type</th>
+                        <th>Device</th>
+                        <th>Category</th>
                         <th colspan="2">Actions</th>
                     </thead>
                     <tbody>
-                        {% for x in projects %}
+                        {% for x in devices %}
                         <tr>
-                            <td>{{x.project}}</td>
-                            <td>{{x.type}}</td>
-                            <td><a class="btn btn-secondary" href="{% url 'projects:query' x.id %}"><i class="fa fa-file-text-o"
-                                        aria-hidden="true"></i>Details</a></td>
-                            <td><a class="btn btn-danger" href="{% url 'projects:delete' x.id %}"><i class="fa fa-times"
+                            <td>{{x.device}}</td>
+                            <td>{{x.category}}</td>
+                            <td><a class="btn btn-secondary" href="{% url 'devices:query' x.id %}"><i class="fa fa-file-text-o"
+                                        aria-hidden="true"></i>
+                                    Details</a></td>
+                            <td><a class="btn btn-danger" href="{% url 'devices:delete' x.id %}"><i class="fa fa-times"
                                         aria-hidden="true"></i>Delete</a></td>
                         </tr>
                         {% endfor %}
@@ -54,6 +47,7 @@
         </div>
     </div>
 </div>
+
 
 
 {% endblock main %}
