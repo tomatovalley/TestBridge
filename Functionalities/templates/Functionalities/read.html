@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+<div class="col-md-12">
+    <div class="tile">
+
+        <br>
+        <h1>Functionality details</h1>
+        <br>
+
+        <h4>Description:</h4>
+        <p>{{functionalities.description | linebreaks}}</p>
+        <br>
+
+        <h4>Status:</h4>
+        <p>{{functionalities.status}}</p>
+        <br>
+
+        <h4>Create date:</h4>
+        <p>{{functionalities.creationDate}}</p>
+        <br>
+
+        <h4>Updated date:</h4>
+        <p>{{functionalities.updatedDate}}</p>
+        <br>
+
+        <div class="tile-footer">
+            <a class="btn btn-secondary" href="{% url 'functionalities:list' %}"><i class="fa fa-fw fa-lg fa-arrow-circle-left"></i>Back</a>
+            <a class="btn btn-info ml-2" href="{% url 'functionalities:update' functionalities.id %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock main %}

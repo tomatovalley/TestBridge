@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<div class="col-md-12">
+    <div class="tile">
+        <form method="post" class="form-horizontal">
+            {% csrf_token %}
+
+            <p class="align-center text-danger">Are you sure you want to delete the functionality ?</p>
+
+            <div class="form-group">
+                <input class="btn btn-danger" type="submit" name="submit" value="Yes">
+                <a class="btn btn-secondary" href="{% url 'functionalities:list' %}">No</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+{% endblock main %}

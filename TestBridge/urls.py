@@ -27,4 +27,5 @@ urlpatterns = [
 
     url(r'^projects/', include('Projects.urls',namespace='projects')),
     url(r'^devices/', include('Devices.urls',namespace='devices')),
+    url(r'^functionalities/', include('Functionalities.urls',namespace='functionalities')),
 ]
