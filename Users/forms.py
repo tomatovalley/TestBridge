@@ -68,6 +68,8 @@ class UserEditForm(forms.ModelForm):
 
 class UserProfileForm(forms.ModelForm):
 
+  phone_number = forms.CharField(max_length=10, min_length=10, widget=forms.TextInput(attrs={'class':'form-control'}))
+  
   class Meta:
     model = Tb_user
     fields = ('user_type','company','phone_number','address','city','state','country')
@@ -75,7 +77,6 @@ class UserProfileForm(forms.ModelForm):
     widgets={
             'user_type':forms.Select(attrs={'class':'form-control'}),
             'company':forms.TextInput(attrs={'class':'form-control'}),
-            'phone_number':forms.TextInput(attrs={'class':'form-control'}),
             'address':forms.TextInput(attrs={'class':'form-control'}),
             'city':forms.TextInput(attrs={'class':'form-control'}),
             'state':forms.TextInput(attrs={'class':'form-control'}),

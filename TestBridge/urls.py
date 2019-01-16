@@ -22,6 +22,8 @@ urlpatterns = [
 
     url(r'^projects/', include('Projects.urls',namespace='projects')),
     url(r'^devices/', include('Devices.urls',namespace='devices')),
+    url(r'^tests/', include('Tests.urls',namespace='tests')),
+    url(r'^bugs/', include('Bugs.urls',namespace='bugs')),
 
     url(r'^', include('django.contrib.auth.urls')),
     url(r'^', include('Users.urls', namespace='usersapp')),

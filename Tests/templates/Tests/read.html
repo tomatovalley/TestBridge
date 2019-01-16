@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+<div class="app-title">
+    <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'devices:list' %}">List of tests</a></li>
+        <li class="breadcrumb-item"><span class="breadcrumb-item active">Test details</span></li>
+    </ul>
+</div>
+
+<div class="col-md-12">
+    <div class="tile">
+
+        <br>
+        <h1>Test details</h1>
+        <br>
+
+        <h4>Test Description:</h4>
+        <p>{{test.name}}</p>
+        <br>
+        
+        <h4>Functionality ID:</h4>
+        <p>{{test.functionality_id}}</p>
+        <br>
+        
+        <h4>Device ID:</h4>
+        <p>{{test.device_id}}</p>
+        <br>
+
+        <div class="tile-footer">
+            <a class="btn btn-secondary" href="{% url 'tests:list' %}"><i class="fa fa-fw fa-lg fa-arrow-circle-left"></i>Back</a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock main %}

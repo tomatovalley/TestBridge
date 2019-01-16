@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'Users',
     'Devices',
     'Projects',
+    'Bugs',
+    'Tests',
 ]
 
 MIDDLEWARE = [
