@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+<div class="row">
+    <div class="clearfix"></div>
+    <div class="col-md-12">
+        <div class="tile">
+
+            <h3 class="tile-title">List of functionalities</h3>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <th>Functionality</th>
+                        <th colspan="2">Actions</th>
+                    </thead>
+                    <tbody>
+                        {% for x in functionalities %}
+                        <tr>
+                            <td>{{x.title}}</td>
+                            <td><a class="btn btn-secondary" href="{% url 'functionalities:query' x.id %}"><i class="fa fa-file-text-o" aria-hidden="true"></i>Details</a></td>
+                            <td><a class="btn btn-danger" href="{% url 'functionalities:delete' x.id %}"><i class="fa fa-times" aria-hidden="true"></i>Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock main %}
