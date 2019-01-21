@@ -1,77 +1,56 @@
-{% extends 'base.html' %}
-
-
-{% block main %}
-
-<div class="app-title">
-    <ul class="app-breadcrumb breadcrumb">
-        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="{% url 'projects:list' %}">List of projects</a></li>
-        <li class="breadcrumb-item"><span class="breadcrumb-item active">Project details</span></li>
-    </ul>
-</div>
-
-<div class="col-md-12">
-    <div class="tile">
-
-        <br>
-        <h1>Project details</h1>
-        <br>
-
-        <h4>Project:</h4>
-        <p>{{projects.project}}</p>
-        <br>
-
-        <h4>Status:</h4>
-        <p>{{projects.status}}</p>
-        <br>
-
-        <h4>Type of project:</h4>
-        <p>{{projects.type}}</p>
-        <br>
-
-        <h4>Location:</h4>
-        <a href="{{project.location}}">{{projects.location}}</a>
-        <br>
-        <br>
-
-        <h4>Device:</h4>
-        <p>
-            <ul>
-                {% for d in device %}
-                <li>{{d.device}}</li>
-                {% endfor %}
-            </ul>
-        </p>
-        <br>
-
-        <h4>Features:</h4>
-        <p>{{projects.features|linebreaks }}</p>
-        <br>
-
-        <h4>Budget:</h4>
-        <p>{{projects.budget}}</p>
-        <br>
-
-        <h4>Pay per bug:</h4>
-        <p>{{projects.payPerBug}}</p>
-        <br>
-
-        <h4>Creation date:</h4>
-        <p>{{projects.creationDate}}</p>
-        <br>
-
-        <h4>Update date:</h4>
-        <p>{{projects.updatedDate}}</p>
-        <br>
-
-        <div class="tile-footer">
-            <a class="btn btn-secondary" href="{% url 'projects:list' %}"><i class="fa fa-fw fa-lg fa-arrow-circle-left"></i>Back</a>
-            <a class="btn btn-info ml-2" href="{% url 'projects:update' projects.id %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
+{% extends 'base.html' %}{% block main %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="tile">
+            <br>
+            <h1>Project details</h1>
+            <br>
+            <h4>Project:</h4>
+            <p>{{projects.project}}</p>
+            <br>
+            <h4>Status:</h4>
+            <p>{{projects.status}}</p>
+            <br>
+            <h4>Type of project:</h4>
+            <p>{{projects.type}}</p>
+            <br>
+            <h4>Location:</h4>
+            <a href="{{project.location}}">{{projects.location}}</a>
+            <br>
+            <br>
+            <h4>Device:</h4>
+            <p>
+                <ul>
+                    {% for d in device %}
+                    <li>{{d.device}}</li>
+                    {% endfor %}
+                </ul>
+            </p>
+            <br>
+            <h4>Features:</h4>
+            <p>{{projects.features|linebreaks }}</p>
+            <br><h4>Budget:</h4>
+            <p>{{projects.budget}}</p>
+            <br>
+            <h4>Pay per bug:</h4>
+            <p>{{projects.payPerBug}}</p>
+            <br>
+            <h4>Creation date:</h4>
+            <p>{{projects.creationDate}}</p>
+            <br>
+            <h4>Update date:</h4>
+            <p>{{projects.updatedDate}}</p>
+            <br>
+            <div class="tile-footer">
+                <a class="btn btn-secondary" href="{% url 'projects:list' %}">
+                    <i class="fa fa-fw fa-lg fa-arrow-circle-left"></i>
+                    Back
+                </a>            
+                <a class="btn btn-info ml-2" href="{% url 'projects:update' projects.id %}">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Edit
+                </a>
+            </div>
         </div>
     </div>
-</div>
-
-
-{% endblock main %}
+</div>{% endblock main %}

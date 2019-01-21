@@ -1,44 +1,38 @@
-{% extends 'base.html' %}
-
-{% block main %}
-
+{% extends 'base.html' %}{% block main %}
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="tile">
             <form method="post">
                 <h3 class="tile-title">Edit device</h3>
                 <div class="tile-body">
-
                     {% csrf_token %}
-
                     {% for hidden in form.hidden_fields %}
                     {{hidden}}
                     {% endfor %}
-
                     <div class="form-group">
                         <label for="{{form.device.id_for_label}}" class="control-label">{{form.device.label}}</label>
                         {{form.device}}
                     </div>
-
                     <div class="form-group">
                         <label for="{{form.os.id_for_label}}" class="control-label">{{form.os.label}}</label>
                         {{form.os}}
                     </div>
-
                     <div class="form-group">
                         <label for="{{form.version.id_for_label}}" class="control-label">{{form.version.label}}</label>
                         {{form.version}}
                     </div>
-
                 </div>
-
                 <div class="tile-footer">
-                    <button class="btn btn-primary" type="submit" name="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Edit</button>&nbsp;&nbsp;&nbsp;<a
-                        class="btn btn-secondary" href="{% url 'devices:list' %}"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+                    <button class="btn btn-primary" type="submit" name="submit">
+                        <i class="fa fa-fw fa-lg fa-check-circle"></i>
+                        Edit
+                    </button>&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-secondary" href="{% url 'devices:list' %}">
+                        <i class="fa fa-fw fa-lg fa-times-circle"></i>
+                        Cancel
+                    </a>
                 </div>
             </form>
         </div>
     </div>
-</div>
-
-{% endblock main %}
+</div>{% endblock main %}
