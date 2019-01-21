@@ -1,0 +1,293 @@
+.bodyStart {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	text-align: left;
+	background-color: #edf4f5;
+  }
+.startCont{
+	max-width: 100%!important;
+	width: 100%!important;
+	padding-right: 0px!important;
+	padding-left: 0px!important;
+	margin-right: 0px!important;
+	margin-left: 0px!important;
+}
+.intro-2 {
+            background: url("https://mdbootstrap.com/img/Photos/Others/img (40).jpg")no-repeat center center;
+            background-size: cover;
+}
+.navbar {
+	background-color: transparent;
+}
+.top-nav-collapse {
+	background-color: #036169;
+}
+.navbar{
+	box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+	/*font-weight:300*/
+}
+.navbar.scrolling-navbar{
+	-webkit-transition:background .5s ease-in-out,padding .5s ease-in-out;
+	-o-transition:background .5s ease-in-out,padding .5s ease-in-out;
+	transition:background .5s ease-in-out,padding .5s ease-in-out;
+	padding-top:12px;
+	padding-bottom:12px
+}
+
+@media (min-width:600px){
+	.navbar .dropdown-menu form{width:22rem}
+	.navbar.scrolling-navbar .navbar-nav>li{
+		-webkit-transition-duration:1s;
+		-o-transition-duration:1s;
+		transition-duration:1s}
+/**/.navbar.scrolling-navbar.top-nav-collapse{
+	padding-top:5px;
+	padding-bottom:5px;
+	}
+}
+
+.btn-outline-lightt {
+	border: 2px solid #edf4f5!important;
+  }
+.btn-outline-lightt:hover{color:red;background-color:rgba(0,0,0,.16);}
+
+
+
+
+.btn-outline-lightt.focus,.btn-outline-lightt:focus{outline:0;box-shadow:0 0 0 .2rem rgb(223, 248, 0)}
+
+.btn-outline-lightt.disabled,.btn-outline-lightt:disabled{color:#f8f9fa;background-color:transparent}
+
+.btn-outline-lightt:not(:disabled):not(.disabled).active,.btn-outline-lightt:not(:disabled):not(.disabled):active,.show>.btn-outline-light.dropdown-toggle{color:#ff0000;background-color:#f8f9fa;border-color:#f8f9fa}
+
+.btn-outline-lightt:not(:disabled):not(.disabled).active:focus,.btn-outline-lightt:not(:disabled):not(.disabled):active:focus,.show>.btn-outline-light.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(248,249,250,.5)}
+
+
+
+
+#myFooter {
+	background-color: #045659;
+	color:#edf4f5;
+}
+
+#myFooter .footer-copyright{
+	background-color: #036169;
+	padding-top:3px;
+	padding-bottom:3px;
+	text-align: center;
+}
+
+#myFooter .footer-copyright p{
+	margin:10px;
+	color: #edf4f5;
+}
+
+#myFooter ul{
+	list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+
+}
+
+#myFooter h5{
+	font-size: 18px;
+    color: #edf4f5;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter a{
+	color:#edf4f5;
+	text-decoration: none;
+}
+
+#myFooter a:hover, #myFooter a:focus{
+	text-decoration: none;
+	color:#588c8f;
+}
+
+#myFooter .myCols{
+	text-align: center;
+}
+
+#myFooter .social-networks{
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 38px;
+}
+
+#myFooter .social-networks a{
+    font-size: 32px;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #edf4f5;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#myFooter .social-networks a:hover{
+	text-decoration: none;
+
+}
+
+#myFooter .facebook:hover{
+	color:#0077e2;
+}
+
+#myFooter .google:hover{
+	color:#ef1a1a;
+}
+
+#myFooter .twitter:hover{
+	color: #00aced;
+}
+
+@media screen and (max-width: 767px){
+	#myFooter {
+		text-align: center;
+	}
+}
+
+
+
+
+
+
+
+#videoDiv{
+    width:100%;
+    /*min-height: 100%;*/ 
+    height: 100%;
+    /*width: auto;*/
+    padding:0!important;
+    margin: 0!important;
+    background-color: #036169;
+    position: relative;
+}
+#video{    
+    width: 100%;/*100vw; */
+    height: auto;
+    object-fit: fill;/*cover*/
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+#messageBox{
+	position: absolute;  
+	top: -80px;  
+	left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:100%;
+}
+
+
+
+
+
+
+
+.line-head30 {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #ddd;
+  }
+.line-headUp {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.line-headDown {
+	padding-bottom: 50px;
+}
+
+.hvd {
+  margin-bottom: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  letter-spacing: normal;
+  font-style: normal;
+  color: #edf4f5;
+  opacity: 1;
+
+  font-size: 4.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  
+}
+.hvd2 {
+	margin-bottom: 0.5rem;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-weight: 350;
+	line-height: 1;
+	letter-spacing: normal;
+	font-style: normal;
+	color: #edf4f5;
+	font-size: 1.4rem;
+	opacity: 1;
+	
+  }
+.hvd3 {
+  margin-bottom: 0rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  letter-spacing: normal;
+  font-style: normal;
+  color: #edf4f5;
+  opacity: 1;
+  
+  font-size: 1.5rem!important;
+  font-weight: 600;
+  line-height: 1.5;
+  
+}
+
+.hvd4 {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	letter-spacing: normal;
+	font-style: normal;
+	color: #edf4f5!important;
+	font-weight: 550!important;
+	line-height: 1.5;
+  }
+.backsg{
+	background-color: #045659!important;
+	height: 140px!important;
+}
+
+/*****************************carousel**************************/
+.carousel-item {
+	height: 80vh;
+	min-height: 300px;
+	background: no-repeat center center scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/***********************ICONS******************************************/
+
+.icon-minimize:before{content:url("/static/ico/baseline-fullscreen_exit-24px.svg")}
+.icon-maximize:before{content:url("/static/ico/baseline-fullscreen-24px.svg")}
+.icon-toggle-left:before{content:url("/static/ico/baseline-toggle_on-24px.svg");}
+.icon-toggle-right:before{content:url("/static/ico/baseline-toggle_off-24px.svg");}
+.icon-home:before{content:url("/static/ico/baseline-toggle_on-24px.svg");}
+.icon-log-out:before{content:url("/static/ico/baseline-exit_to_app-24px.svg")}
+.icon-maximize-2:before{content:url("/static/ico/baseline-fullscreen-24px.svg")}
+.icon-minimize-2:before{content:url("/static/ico/baseline-fullscreen_exit-24px.svg")}
+.icon-settings:before{content:url("/static/ico/baseline-settings_applications-24px.svg")}
+.icon-profile:before{content:url("/static/ico/baseline-account_box-24px.svg");}
+.icon-menu:before{content:url("/static/ico/baseline-dashboard-24px.svg");}
+.icon-contactUs:before{content:url("/static/ico/baseline-business_center-24px.svg")}
+.icon-devices:before{content:url("/static/ico/baseline-devices-24px.svg");}
+.icon-projects:before{content:url("/static/ico/baseline-dvr-24px.svg");}
+.icon-chevron-down:before{content:url("/static/ico/ico/baseline-expand_more-24px.svg");}
+.icon-chevron-left:before{content:url("/static/ico/ico/48_rosa.png");}
+.icon-chevron-right:before{content:url("/static/ico/ico/baseline-chevron_right-24px.svg");}
+.icon-more-horizontal:before{content:url("/static/ico/ico/baseline-chevron_right-24px.svg");}
+  
