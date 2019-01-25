@@ -15,11 +15,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def list(request):
-    bugs = Bug.objects.all()
+    bugs = Bug.objects.filter(user=request.user)
     return render(request, template_name='Bugs/bugs.html',context={'bugs':bugs})
 
 def query(request, pk):
-    bug=Bug.objects.get(id=pk)
+    bug=Bug.objects.get(id=pk,user=request.user)
     return render(request, template_name='Bugs/read.html',context={'bug':bug})
 
 class CreateBug(LoginRequiredMixin, SuccessMessageMixin, CreateView):
@@ -27,6 +27,9 @@ class CreateBug(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     success_message = "The bug has been created"
     form_class=BugForm
     template_name='Bugs/create.html'
+
+    def get_initial(self):
+      return {'user': self.request.user }
 
     def get_success_url(self):
         return reverse('bugs:list')
@@ -55,7 +58,7 @@ class DeleteBug(SuccessMessageMixin, DeleteView):
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
         messages.warning(self.request, self.success_message % obj.__dict__)
-#        return super(DeleteBug, self).delete(request, *args, **kwargs)
+        return super(DeleteBug, self).delete(request, *args, **kwargs)
 
     def get_success_url(self):
         return reverse('bugs:list')

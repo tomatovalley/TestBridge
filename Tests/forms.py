@@ -7,9 +7,10 @@ class TestForm(forms.ModelForm):
 
     class Meta:
         model=Test
-        fields='__all__'
+        fields= ['name','functionality_id','device_id']
 
         widgets={
+            'user':forms.HiddenInput(),
             'name':forms.TextInput(attrs={'class':'form-control'}),
             'functionality_id': forms.TextInput(attrs={'class':'form-control'}),
             'device_id':forms.Select(attrs={'class':'form-control'}),

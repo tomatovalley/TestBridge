@@ -135,11 +135,14 @@ STATICFILES_DIRS = [
      os.path.join(BASE_DIR, 'static')
 ]
 
-#new MIF 28/nov/2018
-MEDIA_ROOT = 'media/'
 
 #new MIF 28/nov/2018
-MEDIA_URL = 'http://localhost:8001/media/'
+MEDIA_URL = '/media/'
+
+#new MIF 28/nov/2018
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 
 #new MIF 10/dic/2018
 LOGIN_REDIRECT_URL = '/'

@@ -16,11 +16,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 def list(request):
-    tests = Test.objects.all()
+    tests = Test.objects.filter(user=request.user)
     return render(request, template_name='Tests/tests.html',context={'tests':tests})
 
 def query(request, pk):
-    test=Test.objects.get(id=pk)
+    test=Test.objects.get(id=pk,user=request.user)
     return render(request, template_name='Tests/read.html',context={'test':test})
 
 class CreateTest(LoginRequiredMixin, SuccessMessageMixin, CreateView):
@@ -28,6 +28,9 @@ class CreateTest(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     success_message = "The test has been created"
     form_class=TestForm
     template_name='Tests/create.html'
+
+    def get_initial(self):
+      return { 'user': self.request.user }
 
     def get_success_url(self):
         return reverse('tests:list')
