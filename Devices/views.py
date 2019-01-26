@@ -11,7 +11,10 @@ from django.core.urlresolvers import reverse
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 
-# Create your views here.
+from rest_framework import generics
+from Devices.serializers import DevicesSerializer
+
+# Create your views here.s
 
 def list(request):
     devices=Device.objects.all()
@@ -58,3 +61,18 @@ class DeleteDevices(SuccessMessageMixin, DeleteView):
 
     def get_success_url(self):
         return reverse('devices:list')
+
+class ListDevices(generics.ListAPIView):
+    queryset = Device.objects.all()
+    serializer_class = DevicesSerializer
+
+#class ListDevices(generics.ListAPIView, generics.RetrieveUpdateDestroyAPIView):
+#     Lookup_field='pk'
+#     serializer_class = DevicesSerializer
+
+#     def get_queryset(self):
+#         return Device.objects.all()
+
+#     def get_object(self):
+#         pk=self.kwargs.get("pk")
+#         return super(ListDevices, self).get_object(pk=pk)
