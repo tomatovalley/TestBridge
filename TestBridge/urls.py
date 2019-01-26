@@ -25,7 +25,9 @@ urlpatterns = [
     url(r'^', include('Users.urls', namespace='usersapp')),
     url(r'^', include('TestBridgeApp.urls', namespace='testbridgeapp')),
 
+    url(r'^api/', include('Devices.urls')),
+
     url(r'^projects/', include('Projects.urls',namespace='projects')),
     url(r'^devices/', include('Devices.urls',namespace='devices')),
-    url(r'^functionalities/', include('Functionalities.urls',namespace='functionalities')),
+    
 ]

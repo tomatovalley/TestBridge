@@ -12,7 +12,7 @@
     </ul>
 </div>
 
-<div class="col-md-12">
+<div class="col-lg-12">
     <div class="tile">
 
         <br>
@@ -48,6 +48,16 @@
 
         <h4>Features:</h4>
         <p>{{projects.features|linebreaks }}</p>
+        <br>
+
+        <h4>Functionalities:</h4>
+            {% for f in functionalities %}
+                <h6>Functionality {{forloop.counter}}</h6>
+                <p>{{f.description|linebreaks}}</p>
+                <p>Status: {{f.status}}</p>
+                <p>Creation date: {{f.creationDate}}</p>
+                <p>Update date: {{f.updatedDate}}</p>
+            {% endfor %}
         <br>
 
         <h4>Budget:</h4>
