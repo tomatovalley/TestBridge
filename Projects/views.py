@@ -18,6 +18,10 @@ from django.contrib.auth.decorators import login_required
 
 from django.forms.widgets import Textarea, TextInput, CheckboxInput
 
+from rest_framework import generics, mixins
+from Projects.serializers import ProjectsSerializer
+from django.db.models import Q
+
 # Create your views here.
 
 def list(request):
@@ -97,3 +101,33 @@ def functionalities(request, project_id):
 
     formset=FunctionalityFormSet(instance=project)
     return render(request, 'Projects/functionalities.html', {'formset':formset})
+
+class ProjectApiCQ(mixins.CreateModelMixin, generics.ListAPIView):
+    lookup_field            = 'pk'
+    serializer_class        = ProjectsSerializer
+
+    def get_queryset(self):
+        qs = Project.objects.filter(user=self.request.user.id)
+        query = self.request.GET.get("q")
+        if query is not None:
+            qs = qs.filter(
+                    Q(title__icontains=query)|
+                    Q(content__icontains=query)
+                    ).distinct()
+        return qs
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def get_serializer_context(self, *args, **kwargs):
+        return {"request": self.request}
+
+class ProjectApiRUD(generics.RetrieveUpdateDestroyAPIView):
+    lookup_field='pk'
+    serializer_class = ProjectsSerializer
+
+    def get_queryset(self):
+        return Project.objects.all()

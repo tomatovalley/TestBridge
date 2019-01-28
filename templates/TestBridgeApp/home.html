@@ -13,8 +13,40 @@ Home
 		<li class="breadcrumb-item"><span class="breadcrumb-item active">Home</span></li>
 	</ul>
 </div>
-
-<h1> HomePage </h1>
+<div class="row">
+	<div class="col-md-6 col-lg-3">
+	  <div class="widget-small primary coloured-icon"><i class="icon fa fa-mobile fa-3x"></i>
+		<div class="info">
+		  <h4>Devices</h4>
+		  <p><b>{{devices}}</b></p>
+		</div>
+	  </div>
+	</div>
+	<div class="col-md-6 col-lg-3">
+	  <div class="widget-small primary coloured-icon"><i class="icon fa fa-code fa-3x"></i>
+		<div class="info">
+		  <h4>Projects</h4>
+		  <p><b>{{projects}}</b></p>
+		</div>
+	  </div>
+	</div>
+	<div class="col-md-6 col-lg-3">
+	  <div class="widget-small primary coloured-icon"><i class="icon fa fa-tasks fa-3x"></i>
+		<div class="info">
+		  <h4>Tests</h4>
+		  <p><b>10</b></p>
+		</div>
+	  </div>
+	</div>
+	<div class="col-md-6 col-lg-3">
+	  <div class="widget-small primary coloured-icon"><i class="icon fa fa-bug fa-3x"></i>
+		<div class="info">
+		  <h4>Bugs</h4>
+		  <p><b>500</b></p>
+		</div>
+	  </div>
+	</div>
+  </div>
 
 <div id="wrapper">
 
@@ -31,30 +63,6 @@ Home
 			</span>
 		</div>
 	</header>
-
-	<aside id="leftsidebar">
-		<nav id="nav">
-			<ul>
-
-				<li><a href="/">Home</a></li>
-				{% block sidenav %}
-				{% if user.is_authenticated %}
-				<li><a href="{% url 'usersapp:user_profile' user.username %}">Profile</a></li>
-				{% endif %}
-				{% endblock %}
-				<li><a href="/contact">Contact Us</a></li>
-			</ul>
-		</nav>
-	</aside>
-
-	<section id="main">
-		{% block content %}
-		<h1>Welcome!</h1>
-		<p>This is the site template</p>
-		{% endblock %}
-	</section>
-
-	<footer id="footer">Copyright &copy; 2017 TestBridge</footer>
 
 </div>
 

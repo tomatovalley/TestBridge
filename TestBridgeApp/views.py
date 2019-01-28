@@ -6,9 +6,19 @@ from django.core.mail import send_mail, get_connection
 
 from .forms import ContactForm
 
+from Devices.models import Device
+from Projects.models import Project
 
 def home(request):
-  return render(request,"TestBridgeApp/home.html")
+  devices=Device.objects.filter(user=request.user.id).count()
+  projects=Project.objects.filter(user=request.user.id).count()
+
+  context={
+    'devices':devices,
+    'projects':projects
+  }
+
+  return render(request,"TestBridgeApp/home.html", context)
 
 def contact(request):
   submitted = False

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include, handler404
 from django.contrib import admin
+from rest_framework_jwt.views import obtain_jwt_token
 
 handler404='TestBridge.views.not_found'
 
@@ -25,7 +26,9 @@ urlpatterns = [
     url(r'^', include('Users.urls', namespace='usersapp')),
     url(r'^', include('TestBridgeApp.urls', namespace='testbridgeapp')),
 
-    url(r'^api/', include('Devices.urls')),
+    url(r'^api-auth/', include('rest_auth.urls')),
+    url(r'^api-devices/', include('Devices.urls')),
+    url(r'^api-projects/', include('Projects.urls')),
 
     url(r'^projects/', include('Projects.urls',namespace='projects')),
     url(r'^devices/', include('Devices.urls',namespace='devices')),

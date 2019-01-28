@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.contrib.auth.models import User
+from django.conf import settings
 from django.db import models
 
 # Create your models here.
@@ -19,6 +21,7 @@ class Device(models.Model):
         ('IOS', 'IOS'),
     )
 
+    user=models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
     device=models.CharField(max_length=200)
     category=models.CharField(max_length=30, choices=CATEGORY_DEVICE)
     os=models.CharField(max_length=50, choices=OS_DEVICE)

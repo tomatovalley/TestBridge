@@ -11,17 +11,17 @@ from django.core.urlresolvers import reverse
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 
-from rest_framework import generics
+from rest_framework import generics, mixins
 from Devices.serializers import DevicesSerializer
-
+from django.db.models import Q
 # Create your views here.s
 
 def list(request):
-    devices=Device.objects.all()
+    devices=Device.objects.filter(user=request.user)
     return render(request, template_name='Devices/Devices.html',context={'devices':devices})
 
 def query(request, pk):
-    devices=Device.objects.get(id=pk)
+    devices=Device.objects.get(id=pk,user=request.user)
     return render(request, template_name='Devices/read.html',context={'devices':devices})
 
 class CreateDevices(SuccessMessageMixin, CreateView):
@@ -29,6 +29,11 @@ class CreateDevices(SuccessMessageMixin, CreateView):
     success_message = "The device %(device)s has been created"
     form_class=DeviceForm
     template_name='Devices/create.html'
+
+    def get_initial(self):
+        return {
+             'user': self.request.user
+        }
 
     def get_success_url(self):
         return reverse('devices:list')
@@ -62,17 +67,32 @@ class DeleteDevices(SuccessMessageMixin, DeleteView):
     def get_success_url(self):
         return reverse('devices:list')
 
-class ListDevices(generics.ListAPIView):
-    queryset = Device.objects.all()
+class DeviceApiCQ(mixins.CreateModelMixin, generics.ListAPIView):
+    lookup_field            = 'pk'
+    serializer_class        = DevicesSerializer
+
+    def get_queryset(self):
+        qs = Device.objects.filter(user=self.request.user.id)
+        query = self.request.GET.get("q")
+        if query is not None:
+            qs = qs.filter(
+                    Q(title__icontains=query)|
+                    Q(content__icontains=query)
+                    ).distinct()
+        return qs
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def get_serializer_context(self, *args, **kwargs):
+        return {"request": self.request}
+
+class DeviceApiRUD(generics.RetrieveUpdateDestroyAPIView):
+    lookup_field='pk'
     serializer_class = DevicesSerializer
 
-#class ListDevices(generics.ListAPIView, generics.RetrieveUpdateDestroyAPIView):
-#     Lookup_field='pk'
-#     serializer_class = DevicesSerializer
-
-#     def get_queryset(self):
-#         return Device.objects.all()
-
-#     def get_object(self):
-#         pk=self.kwargs.get("pk")
-#         return super(ListDevices, self).get_object(pk=pk)
+    def get_queryset(self):
+        return Device.objects.all()
