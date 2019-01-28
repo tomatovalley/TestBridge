@@ -22,7 +22,11 @@
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
             <div class="container">
-                <a class="hvd3 navbar-brand" href="{% if user.is_authenticated %}/home{% else %}/{% endif %}">TestBridge</a>
+                <div>
+                    <a href="{% if user.is_authenticated %}/home{% else %}/{% endif %}">
+                        <img class="logoStart" src="/static/images/logoblanco.png">
+                    </a>
+                </div>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -49,7 +53,7 @@
                             <a class="hvd4 nav-link" href="/register/">Create account</a>
                         </li>
                         <li>
-                            <a class="hvd4 nav-link btn btn-outline-lightt" href="{% url 'login' %}">Log in</a>
+                            <a class="hvd4 nav-link btn btn-outline-lightt" href="{% if user.is_authenticated %}/home{% else %}{% url 'login' %}{% endif %}">Log in</a>
                         </li>
                     </ul>
                 </div>
@@ -72,14 +76,13 @@
                     <ul>
                         <li><a href="/testing">Home</a></li>
                         <li><a href="/">Sign up</a></li>
-                        <li><a href="/">Downloads</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3 myCols">
                     <h5>About us</h5>
                     <ul>
                         <li><a href="/">Company Information</a></li>
-                        <li><a href="/contact">Contact us</a></li>
+                        <li><a href="/">Contact us</a></li>
                         <li><a href="/">Reviews</a></li>
                     </ul>
                 </div>

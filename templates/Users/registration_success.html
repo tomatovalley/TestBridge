@@ -1,17 +1,47 @@
-{% extends "baseUser.html" %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mainsinavbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="/static/css/start_test.css">
+    <title>Testbridge</title>
+  </head>
+  <style>
+    h1{
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+    }
+    
+  </style>
+  <body>
+    <section class="material-full-bg">
+      <div class="cover"></div>
+    </section>
+    <section class="register-contentST">
+      <div class="logoST">
+        <a class="app-header__SigIn" href="/">
+          <img class="" src="/static/images/logoblanco.png" alt="TESTBRIDGE">
+        </a>
+      </div>
 
-{% block title %}User Registration Success{% endblock %}
-
-{% block main %}
-
-<div class="row justify-content-center">
-	<div class="col-md-5">
-		<div class="tile">
-			<h1>User Registration Success</h1>
-			<p>You have successfully registered.</p>
-			<p>Click <a href="{% url 'login' %}?next=/">here</a> to log in.</p>
+	</section>
+	<div class="row justify-content-center">
+			<div class="col-md-5">
+				<div class="tile">
+					<h1>User Registration Success</h1>
+					<p>You have successfully registered.</p>
+					<p>Click <a href="{% if user.is_authenticated %}/home{% else %}{% url 'login' %}?next=/{% endif %}">here</a> to log in.</p>
+					
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
+	<section class="register-contentST">
 
-{% endblock %}
+	</section>
+
+  </body>
+</html>

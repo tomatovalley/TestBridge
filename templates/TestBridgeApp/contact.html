@@ -5,53 +5,65 @@ Contact Us
 {% endblock %}
 
 {% block main %}
-
-<div class="row">
-        <!-- Map Column -->
-        <div class="col-lg-8 mb-4">
-          <!-- Embedded Google Map -->
-          <iframe width="100%" height="350px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%&amp;height=450&amp;hl=en&amp;coord=32.5223687190275, -117.01889991760255&amp;q=1%20Suchiate%2013%2C%20Revolucion%2C%2022015%20Tijuana%2C%20B.C.+(Contact%20us)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed"></iframe>
-        </div>
-        <!-- Contact Details Column -->
-        <div class="col-lg-4 mb-4">
-          <h3>Contact Details</h3>
-          <p>
-			Suchiate 13, Revolucion, 
-            <br>22015 Tijuana, B.C.
-            <br>
-          </p>
-          <p>
-            <abbr title="Phone">P</abbr>: (664) 123-4567
-          </p>
-          <p>
-            <abbr title="Email">E</abbr>:
-            <a href="mailto:name@example.com">miCorreoYaQueMeContraten@arkus.com
-            </a>
-          </p>
-          <p>
-            <abbr title="Hours">H</abbr>: Monday - Friday: 8:00 AM to 5:00 PM
-          </p>
+<div class="row justify-content-center">
+  <div class="col-md-10"></div>
+  <div class="col-md-6">
+    <!-- Map Column -->
+    <div class="col-lg-14 mb-4">
+    <!-- Embedded Google Map -->
+      <iframe width="100%" height="350px" frameborder="1" scrolling="no" marginheight="0" marginwidth="0" style="color: #045659" src="https://maps.google.com/maps?width=100%&amp;height=450&amp;hl=en&amp;coord=32.5223687190275, -117.01889991760255&amp;q=1%20Suchiate%2013%2C%20Revolucion%2C%2022015%20Tijuana%2C%20B.C.+(Contact%20us)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed"></iframe>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="">
+      <div class="col-lg-10 mb-4">
+        <h3>Contact Details</h3>
+        <p>
+          Suchiate 13, Revolucion, 
+          <br>22015 Tijuana, B.C.
+          <br>
+        </p>
+        <p>
+          <abbr title="Phone">P</abbr>: (664) 123-4567
+        </p>
+        <p>
+          <abbr title="Email">E</abbr>:
+          <a href="mailto:name@example.com">miCorreoYaQueMeContraten@arkus.com
+          </a>
+        </p>
+        <p>
+          <abbr title="Hours">H</abbr>: Monday - Friday: 8:00 AM to 5:00 PM
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-10">
+    <div class="row justify-content-start">
+      <div class="col-md">
+        <div class="tile">
+          <h3 class="tile-title"> Contact Us</h3>
+          <div class="tile-body">
+            {% if submitted %}
+            <p class="success"> Your message was submitted successfully. Thank you. </p>
+            {% else %}
+            <form action="" method="post" novalidate>
+              {% csrf_token %}
+              {{ form.as_p }}
+              <div class="tile-footer">
+                  <input class="btn btn-primary" type="submit" value="Submit">
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-<div class="row justify-content-start">
-		<div class="col-md">
-				<div class="tile">
-						<h3 class="tile-title"> Contact Us</h3>
-						<div class="tile-body">
-					{% if submitted %}
-					<p class="success"> Your message was submitted successfully. Thank you. </p>
-					{% else %}
-					<form action="" method="post" novalidate>
-						{% csrf_token %}
-						{{ form.as_p }}
-						<div class="tile-footer">
-								<input class="btn btn-primary" type="submit" value="Submit">
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>			
+    </div>
+  </div>			
 </div>
+
+
+
+
+
 {% endif %}
 
 {% endblock %}
