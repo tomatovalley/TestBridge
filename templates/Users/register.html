@@ -1,32 +1,66 @@
-{% extends 'baseUser.html' %}
-
-{% block title %} User Registration {% endblock %}
 
 
-{% block main %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mainsinavbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="/static/css/start_test.css">
+    <title>Testbridge</title>
+  </head>
+  <style>
+    h1{
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+    }
+    
+  </style>
+  <body>
+    <section class="material-full-bg">
+      <div class="cover"></div>
+    </section>
+    <section class="register-contentST">
+      <div class="logoST">
+        <a class="app-header__SigIn" href="/">
+          <img class="" src="/static/images/logoblanco.png" alt="TESTBRIDGE">
+        </a>
+      </div>
 
-<div class="row justify-content-center">
-	<div class="col-md-5">
-		<div class="tile">
-
-			{% if not user.is_authenticated %}
-			<h1>User Registration</h1>
-
-			<form method="post" action="">
-
-				{% csrf_token %}
-				{{ form.as_p }}
-
-				{{form.}}
-
-				<div class="tile-footer">
-					<input class="btn btn-primary" type="submit" value="Register">
-					<a class="btn btn-secondary" href="javascript:window.history.back();"><i class="fa fa-fw fa-lg fa-arrow-circle-left"></i>Back</a>
+	</section>
+	<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="tile">
+		
+					
+					<h1>Create new account</h1>
+		
+					<form method="post" action="">
+		
+						{% csrf_token %}
+						{{ form.as_p }}
+		
+						{{form.}}
+		
+						<div class="tile-footer">
+							<input class="btn btn-primary" type="submit" value="Register">
+							<!--a class="btn btn-secondary" href="javascript:window.history.back();">
+								<i class="fa fa-fw fa-lg fa-arrow-circle-left"></i>
+								Back
+							</a-->
+						</div>
+		
+					</form>
+					
 				</div>
-
-			</form>
-			{% endif %}
-		</div>
+			</div>
 	</div>
-</div>
-{% endblock %}
+	<section class="register-contentST">
+
+	</section>
+
+  </body>
+</html>

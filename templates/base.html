@@ -25,7 +25,7 @@
                 <div class="navbar-wrapper">
                     <div class="navbar-logo" logo-theme="theme6">
                         <a href="/">
-                            <img class="img-fluid2" src="/static/images/logo.PNG" alt="TESTBRIDGE">
+                            <img class="img-fluid2" src="/static/images/logoblanco.png" alt="TESTBRIDGE">
                         </a>
                     </div>
                     <div class="navbar-container container-fluid">
@@ -42,14 +42,12 @@
                             </li>
                         </ul>
                         <ul class="nav-right">
-                            <li class="user-profile header-notification">
-                                <div class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <span style="padding-right:20px">{{ user.first_name }} {{ user.last_name }}</span>
-                                    <!--img src="/static/ico/X_grande.png" class="img-radius" alt="User-Profile-Image"-->                        
-                                </div>
+                            <li>
+                                <span class="hvd4">{{ user.first_name }} {{ user.last_name }}</span>
+                                <!--110*47 img src="/static/ico/X_grande.png" class="img-radius" alt="User-Profile-Image"-->                        
                             </li>
                             <li>
-                                <a class="mobile-menu" id="toggleSideBar" href="#">
+                                <a href="{% url 'usersapp:user_profile' user.username %}">
                                     <i class="icon-settings"></i>
                                 </a>
                             </li>
@@ -131,11 +129,11 @@
                                                     <span class="pcoded-mtext">Profile</span>
                                                 </a>
                                             </li>
-                                            <li class="">
+                                            <!--li class="">
                                                 <a href="{% url 'projects:list' %}" class="waves-effect waves-dark">
                                                     <span class="pcoded-mtext">Your Projects</span>
                                                 </a>
-                                            </li>
+                                            </li-->
                                         </ul>
                                     </li>
                                     <li>
