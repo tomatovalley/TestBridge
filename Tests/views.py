@@ -59,7 +59,7 @@ class DeleteTest(SuccessMessageMixin, DeleteView):
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
         messages.warning(self.request, self.success_message % obj.__dict__)
-#        return super(DeleteTest, self).delete(request, *args, **kwargs)
+        return super(DeleteTest, self).delete(request, *args, **kwargs)
 
     def get_success_url(self):
         return reverse('tests:list')

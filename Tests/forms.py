@@ -24,6 +24,6 @@ class EditTestForm(forms.ModelForm):
 
         widgets={
             'name':forms.TextInput(attrs={'class':'form-control'}),
-            'functionality_id':forms.TextInput(attrs={'class':'form-control'}),
+            'functionality_id':forms.Select(attrs={'class':'form-control'}),
             'device_id':forms.Select(attrs={'class':'form-control'}),
         }

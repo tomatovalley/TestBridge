@@ -11,8 +11,8 @@ import datetime
 class Test(models.Model):
   user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
   name = models.CharField(max_length=50, verbose_name='Test Decription')
-  functionality_id = models.ForeignKey('Projects.Functionality', default=0,verbose_name='Functionality')
-  device_id = models.ForeignKey('Devices.Device', default=0, verbose_name='Device')
+  functionality_id = models.ForeignKey('Projects.Functionality', default=0,verbose_name='Functionality',on_delete=models.CASCADE)
+  device_id = models.ForeignKey('Devices.Device', default=0, verbose_name='Device',on_delete=models.CASCADE)
   creation_date = models.DateField(default=datetime.date.today,verbose_name='Creation Date')
   updated_date = models.DateField(default=datetime.date.today,verbose_name='Updated Date')
   enabled = models.BooleanField(default=True, verbose_name='Enabled')
