@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'Users',
     'Devices',
     'Projects',
+    'Tests',
+    'Bugs',
 ]
 
 MIDDLEWARE = [
@@ -138,10 +140,10 @@ STATICFILES_DIRS = [
 ]
 
 #new MIF 28/nov/2018
-MEDIA_ROOT = 'media/'
+MEDIA_URL = '/media/'
 
 #new MIF 28/nov/2018
-MEDIA_URL = 'http://localhost:8001/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #new MIF 10/dic/2018
 LOGIN_REDIRECT_URL = '/'

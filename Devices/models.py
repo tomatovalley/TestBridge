@@ -29,5 +29,8 @@ class Device(models.Model):
     creationDate=models.DateTimeField(auto_now_add=True)
     updatedDate=models.DateTimeField(auto_now=True)
 
+    class Meta:
+      db_table = 'device'
+
     def __str__(self):
         return self.device

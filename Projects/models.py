@@ -30,6 +30,8 @@ class Project(models.Model):
     status=models.CharField(max_length=50, choices=STATUS_PROJECT, default="Active")
     creationDate=models.DateTimeField(auto_now_add=True)
     updatedDate=models.DateTimeField(auto_now=True)
+    class Meta:
+      db_table = 'project'
 
     def __unicode__(self):
         return u'{}'.format(self.project)
@@ -50,4 +52,5 @@ class Functionality(models.Model):
         return self.title
 
     class Meta:
+        db_table = 'functionality'
         verbose_name_plural='Functionalities'
