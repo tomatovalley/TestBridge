@@ -7,7 +7,7 @@ class BugForm(forms.ModelForm):
 
     class Meta:
         model=Bug
-        fields=['test_id','error_found','steps','screenshot']
+        fields= ['user','test_id','error_found','steps','screenshot']
         widgets={
             'user':forms.HiddenInput(),
             'test_id':forms.Select(attrs={'class':'form-control'}),

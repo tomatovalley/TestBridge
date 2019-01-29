@@ -7,7 +7,7 @@ class TestForm(forms.ModelForm):
 
     class Meta:
         model=Test
-        fields= ['name','functionality_id','device_id']
+        fields= ['user','name','functionality_id','device_id']
 
         widgets={
             'user':forms.HiddenInput(),
