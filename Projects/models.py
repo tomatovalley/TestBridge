@@ -30,6 +30,8 @@ class Project(models.Model):
     status=models.CharField(max_length=50, choices=STATUS_PROJECT, default="Active")
     creationDate=models.DateTimeField(auto_now_add=True)
     updatedDate=models.DateTimeField(auto_now=True)
+    class Meta:
+      db_table = 'project'
 
     def __unicode__(self):
         return u'{}'.format(self.project)
@@ -37,3 +39,18 @@ class Project(models.Model):
     @staticmethod
     def device_list():
        return Project.device.all()
+
+class Functionality(models.Model):
+    project=models.ForeignKey(Project,on_delete=models.CASCADE)
+    title=models.CharField(max_length=200)
+    description=models.CharField(max_length=1500)
+    creationDate=models.DateTimeField(auto_now_add=True)
+    updatedDate=models.DateTimeField(auto_now=True)
+    status=models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        db_table = 'functionality'
+        verbose_name_plural='Functionalities'
