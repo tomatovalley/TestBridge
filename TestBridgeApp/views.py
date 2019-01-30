@@ -6,23 +6,19 @@ from django.core.mail import send_mail, get_connection
 
 from .forms import ContactForm
 
+from Devices.models import Device
+from Projects.models import Project
+
 def home(request):
-  return render(request,"TestBridgeApp/home.html")
+  devices=Device.objects.filter(user=request.user.id).count()
+  projects=Project.objects.filter(user=request.user.id).count()
 
-def start(request):
-  return render(request,"TestBridgeApp/start_home.html")
+  context={
+    'devices':devices,
+    'projects':projects
+  }
 
-def pricing(request):
-  return render(request,"TestBridgeApp/start_Pricing.html")
-
-def resources(request):
-  return render(request,"TestBridgeApp/start_Resources.html")
-
-def testingSolutions(request):
-  return render(request,"TestBridgeApp/start_testingSolutions.html")
-
-def testing(request):
-  return render(request,"TestBridgeApp/testing.html")
+  return render(request,"TestBridgeApp/home.html", context)
 
 def contact(request):
   submitted = False
@@ -40,4 +36,3 @@ def contact(request):
     if 'submitted' in request.GET:
       submitted = True
   return render(request, 'TestBridgeApp/contact.html',{'form':form,'submitted': submitted})
-

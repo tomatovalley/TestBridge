@@ -37,11 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'rest_auth',
+    'rest_framework.authtoken',
     'TestBridgeApp',
     'Users',
     'Devices',
     'Projects',
-    'Functionalities',
+    'Tests',
+    'Bugs',
 ]
 
 MIDDLEWARE = [
@@ -135,11 +140,22 @@ STATICFILES_DIRS = [
 ]
 
 #new MIF 28/nov/2018
-MEDIA_ROOT = 'media/'
+MEDIA_URL = '/media/'
 
 #new MIF 28/nov/2018
-MEDIA_URL = 'http://localhost:8001/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #new MIF 10/dic/2018
-LOGIN_REDIRECT_URL = '/home'
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        #'rest_framework.authentication.BasicAuthentication',
+    ),
+}
