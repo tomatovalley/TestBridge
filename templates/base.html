@@ -43,8 +43,10 @@
                         </ul>
                         <ul class="nav-right">
                             <li>
+                                <span>
+                                    <img src="/static//images/avatar.jpg" class="img-radius margin-imgs" alt="User-Profile-Image">
+                                </span>
                                 <span class="hvd4">{{ user.first_name }} {{ user.last_name }}</span>
-                                <!--110*47 img src="/static/ico/X_grande.png" class="img-radius" alt="User-Profile-Image"-->                        
                             </li>
                             <li>
                                 <a href="{% url 'usersapp:user_profile' user.username %}">

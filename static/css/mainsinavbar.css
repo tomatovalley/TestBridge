@@ -1085,6 +1085,8 @@ pre code {
         -ms-flex: 0 0 16.6666666667%;
             flex: 0 0 16.6666666667%;
     max-width: 16.6666666667%;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .col-md-3 {
     -webkit-box-flex: 0;
@@ -1097,6 +1099,8 @@ pre code {
         -ms-flex: 0 0 33.3333333333%;
             flex: 0 0 33.3333333333%;
     max-width: 33.3333333333%;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .col-md-5 {
     -webkit-box-flex: 0;
