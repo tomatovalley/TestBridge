@@ -111,6 +111,22 @@
           </ul>
         </li>
 
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-tasks"></i><span class="app-menu__label">Tests</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="{% url 'tests:create' %}"><i class="icon fa fa-circle-o"></i> Register test</a></li>
+            <li><a class="treeview-item" href="{% url 'tests:list' %}"><i class="icon fa fa-circle-o"></i> Yours tests</a></li>
+          </ul>
+        </li>
+
+
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-bug"></i><span class="app-menu__label">Bugs</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="{% url 'bugs:create' %}"><i class="icon fa fa-circle-o"></i> Register bug</a></li>
+            <li><a class="treeview-item" href="{% url 'bugs:list' %}"><i class="icon fa fa-circle-o"></i> Yours bugs</a></li>
+          </ul>
+        </li>
+
+        
         <li><a class="app-menu__item" href="/contact"><i class="app-menu__icon fa fa-envelope-o"></i><span class="app-menu__label">Contact Us</span></a></li>
       </ul>
     </aside>
