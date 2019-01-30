@@ -20,6 +20,23 @@ def home(request):
 
   return render(request,"TestBridgeApp/home.html", context)
 
+
+def start(request):
+  return render(request,"TestBridgeApp/start_home.html")
+
+def pricing(request):
+  return render(request,"TestBridgeApp/start_Pricing.html")
+
+def resources(request):
+  return render(request,"TestBridgeApp/start_Resources.html")
+
+def testingSolutions(request):
+  return render(request,"TestBridgeApp/start_testingSolutions.html")
+
+def testing(request):
+  return render(request,"TestBridgeApp/testing.html")
+
+
 def contact(request):
   submitted = False
   if request.method == 'POST':
