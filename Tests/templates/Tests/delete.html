@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<div class="app-title">
+    <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'tests:list' %}">List of tests</a></li>
+        <li class="breadcrumb-item"><span class="breadcrumb-item active">Delete test</span></li>
+    </ul>
+</div>
+
+<div class="col-md-12">
+        <div class="tile">
+            <form method="post" class="form-horizontal">
+                    {% csrf_token %}
+            
+                    <p class="align-center text-danger">Are you sure you want to delete the test {{test.name}}?</p>
+            
+                    <div class="form-group">
+                        <input class="btn btn-danger" type="submit" name="submit" value="Yes">
+                        <a class="btn btn-secondary" href="{% url 'tests:list' %}">No</a>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+
+
+{% endblock main %}

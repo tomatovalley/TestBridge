@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+<div class="app-title">
+    <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'bugs:list' %}">List of bugs</a></li>
+        <li class="breadcrumb-item"><span class="breadcrumb-item active">Bug details</span></li>
+    </ul>
+</div>
+
+<div class="col-md-12">
+    <div class="tile">
+
+        <br>
+        <h1>Bug details</h1>
+        <br>
+
+        <h4>Error Found:</h4>
+        <p>{{bug.error_found}}</p>
+        <br>
+
+        <h4>Test:</h4>
+        <p>{{bug.test_id}}</p>
+        <br>
+
+        <h4>Steps:</h4>
+        <p>{{bug.steps}}</p>
+        <br>
+
+        <h4>Screenshot:</h4>
+        <img src='{{ bug.screenshot.url }}' class='img-responsive' height="300" width="400"/>
+        <br>
+        <br>
+
+        <div class="tile-footer">
+            <a class="btn btn-secondary" href="{% url 'bugs:list' %}"><i class="fa fa-fw fa-lg fa-arrow-circle-left"></i>Back</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock main %}
