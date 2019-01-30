@@ -468,3 +468,7 @@ img {
 .headerSeparacion{
 	height: 40px;
 }
+.margin-imgs{
+	margin-right: 10px;
+	margin-left: 10px;
+}
