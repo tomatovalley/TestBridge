@@ -8,6 +8,7 @@ class DeviceForm(forms.ModelForm):
         fields='__all__'
 
         widgets={
+            'user':forms.HiddenInput(),
             'device':forms.TextInput(attrs={'class':'form-control'}),
             'category':forms.Select(attrs={'class':'form-control'}),
             'os':forms.Select(attrs={'class':'form-control'}),
