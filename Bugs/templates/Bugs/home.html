@@ -1,0 +1,24 @@
+{% extends 'Bugs/base.html' %}
+
+{% block main %}
+
+<div class="container">
+    <main role="main">
+        <div class="jumbotron">
+            <div class="col-sm-8 mx-auto">
+                <h1>Bugs</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ab iusto temporibus distinctio quis ea sit fugiat atque provident cupiditate. Eligendi excepturi obcaecati est ducimus, quisquam beatae magni commodi aliquam!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe illum aspernatur adipisci facilis tempora magnam inventore beatae tenetur voluptas cum, magni cupiditate esse dolorum quam, nobis distinctio sunt exercitationem molestiae!
+                </p>
+                <p>
+                    <a class="btn btn-primary" href="{% url 'projects:create' %}">Register your bug</a>
+                    <a class="btn btn-success" href="{% url 'projects:list' %}">See your bug</a>
+                </p>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock main %}

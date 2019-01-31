@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<div class="app-title">
+	<ul class="app-breadcrumb breadcrumb">
+		<li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+		<li class="breadcrumb-item"><a href="/">Home</a></li>
+		<li class="breadcrumb-item"><span class="breadcrumb-item active">Profile</span></li>
+	</ul>
+</div>
+
+<div class="row justify-content-center">
+	<div class="col-md-8">
+		<div class="tile">
+			<form method="post">
+				<h3 class="tile-title">Profile</h3>
+				<div class="tile-body">
+
+					{% csrf_token %}
+
+					{% if request.user.is_authenticated and user_form.username.value == request.user.username %}
+					{% if submitted %}
+					<p class="success"> Your changes were submitted successfully. </p>
+					{% endif %}
+					{% csrf_token %}
+					{{ user_form.as_p }}
+					{{ profile_form.as_p }}
+
+					<a class="badge badge-dark" href="{% url 'usersapp:user_delete' user_form.username.value%}"> Deactivate account</a>
+					{% else %}
+					u cannot edit that profile - its not yours...
+					{% endif %}
+
+				</div>
+
+				<div class="tile-footer">
+					<button class="btn btn-primary" type="submit" name="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Save</button>&nbsp;&nbsp;&nbsp;<a
+					 class="btn btn-secondary" href="/"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact Us
+{% endblock %}
+
+{% block main %}
+
+<div class="app-title">
+    <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><span class="breadcrumb-item active">Contact</span></li>
+    </ul>
+</div>
+
+<div class="row justify-content-center">
+		<div class="col-md-8">
+				<div class="tile">
+						<h3 class="tile-title"> Contact Us</h3>
+						<div class="tile-body">
+					{% if submitted %}
+					<p class="success"> Your message was submitted successfully. Thank you. </p>
+					{% else %}
+					<form action="" method="post" novalidate>
+						{% csrf_token %}
+						{{ form.as_p }}
+						<div class="tile-footer">
+								<input class="btn btn-primary" type="submit" value="Submit">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>			
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'baseUser.html' %}
+
+{% block title %} User Registration {% endblock %}
+
+
+{% block main %}
+
+<div class="row justify-content-center">
+	<div class="col-md-5">
+		<div class="tile">
+
+			{% if not user.is_authenticated %}
+			<h1>User Registration</h1>
+
+			<form method="post" action="">
+
+				{% csrf_token %}
+				{{ form.as_p }}
+
+				{{form.}}
+
+				<div class="tile-footer">
+					<input class="btn btn-primary" type="submit" value="Register">
+					<a class="btn btn-secondary" href="javascript:window.history.back();"><i class="fa fa-fw fa-lg fa-arrow-circle-left"></i>Back</a>
+				</div>
+
+			</form>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% endblock %}
