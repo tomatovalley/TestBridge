@@ -42,7 +42,7 @@ class EditDevices(SuccessMessageMixin, UpdateView):
     model=Device
     success_message = "The device %(device)s has been modified"
     form_class=EditDeviceForm
-    template_name='Devices/update.html'
+    template_name='update.html'
 
     def get_success_url(self):
         return reverse('devices:list')
@@ -51,7 +51,7 @@ class DeleteDevices(SuccessMessageMixin, DeleteView):
     model=Device
     success_message = "The device %(device)s has been removed"
     form_class=DeviceForm
-    template_name='devices/delete.html'
+    template_name='delete.html'
 
     def get_context_data(self, **kwargs):
         context_data = super(DeleteDevices, self).get_context_data(**kwargs)
