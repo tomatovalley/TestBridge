@@ -18,11 +18,11 @@ from django.db.models import Q
 
 def list(request):
     devices=Device.objects.filter(user=request.user)
-    return render(request, template_name='Devices.html',context={'devices':devices})
+    return render(request, template_name='Devices/Devices.html',context={'devices':devices})
 
 def query(request, pk):
     devices=Device.objects.get(id=pk,user=request.user)
-    return render(request, template_name='read.html',context={'devices':devices})
+    return render(request, template_name='Devices/read.html',context={'devices':devices})
 
 class CreateDevices(SuccessMessageMixin, CreateView):
     model=Device
