@@ -1,171 +1,207 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Testbridge</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Main CSS-->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <style>
-    .app-header__logo{
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
-    }
-    
-  </style>
-  <body class="app sidebar-mini rtl">
-    <!-- Navbar-->
-    <header class="app-header"><a class="app-header__logo" href="/">Testbridge</a>
-      <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
-      <!-- Navbar Right Menu-->
-      <ul class="app-nav">
-        <li class="app-search">
-          <input class="app-search__input" type="search" placeholder="Search">
-          <button class="app-search__button"><i class="fa fa-search"></i></button>
-        </li>
-        <!--Notification Menu-->
-        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Show notifications"><i class="fa fa-bell-o fa-lg"></i></a>
-          <ul class="app-notification dropdown-menu dropdown-menu-right">
-            <li class="app-notification__title">You have 4 new notifications.</li>
-            <div class="app-notification__content">
-              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
-                  <div>
-                    <p class="app-notification__message">Lisa sent you a mail</p>
-                    <p class="app-notification__meta">2 min ago</p>
-                  </div></a></li>
-              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-hdd-o fa-stack-1x fa-inverse"></i></span></span>
-                  <div>
-                    <p class="app-notification__message">Mail server not working</p>
-                    <p class="app-notification__meta">5 min ago</p>
-                  </div></a></li>
-              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-success"></i><i class="fa fa-money fa-stack-1x fa-inverse"></i></span></span>
-                  <div>
-                    <p class="app-notification__message">Transaction complete</p>
-                    <p class="app-notification__meta">2 days ago</p>
-                  </div></a></li>
-              <div class="app-notification__content">
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Lisa sent you a mail</p>
-                      <p class="app-notification__meta">2 min ago</p>
-                    </div></a></li>
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-hdd-o fa-stack-1x fa-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Mail server not working</p>
-                      <p class="app-notification__meta">5 min ago</p>
-                    </div></a></li>
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-success"></i><i class="fa fa-money fa-stack-1x fa-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Transaction complete</p>
-                      <p class="app-notification__meta">2 days ago</p>
-                    </div></a></li>
-              </div>
-            </div>
-            <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
-          </ul>
-        </li>
-        <!-- User Menu-->
-        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
-          <ul class="dropdown-menu settings-menu dropdown-menu-right">
-            <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-          <!--
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TestBridge</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/featherS.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/start_test.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/mainsinavbar.css">
+    <script type="text/javascript" src="/static/js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/pcoded.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/menu-compact.js"></script>
+</head>
+<body style="background-color:#edf4f5" >  
+    <div id="pcoded" class="pcoded iscollapsed" nav-type="st2" theme-layout="vertical" vertical-placement="left" vertical-layout="wide" pcoded-device-type="desktop" vertical-nav-type="collapsed" vertical-effect="overlay" vnavigation-view="view1" fream-type="theme1" layout-type="light">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+            <nav class="navbar header-navbar pcoded-header iscollapsed" header-theme="themelight1" pcoded-header-position="fixed">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo" logo-theme="theme6">
+                        <a href="/">
+                            <img class="img-fluid2" src="/static/images/logoblanco.png" alt="TESTBRIDGE">
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li>
+                                <a class="mobile-menu" id="toggleSideBar" href="#!">
+                                    <i class="icon-toggle-right"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
+                                    <i class="full-screen icon-maximize"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav-right">
+                            <li>
+                                <span>
+                                    <img src="/static//images/avatar.jpg" class="img-radius margin-imgs" alt="User-Profile-Image">
+                                </span>
+                                <span class="hvd4">{{ user.first_name }} {{ user.last_name }}</span>
+                            </li>
+                            <li>
+                                <a href="{% url 'usersapp:user_profile' user.username %}">
+                                    <i class="icon-settings"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="mobile-menu" href="{% url 'logout' %}">
+                                    <i class="icon-log-out"></i>
+                                </a>
+                            </li>
 
-            Requiere autenticacion para poder ver el perfil
-            -->
-            {% if user.is_authenticated %}
-            <li><a class="dropdown-item" href="{% url 'usersapp:user_profile' user.username %}"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="pcoded-main-container" style="margin-top: 70.4px;">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar" navbar-theme="theme1" active-item-theme="theme1" sub-item-theme="theme2" 
+                     active-item-style="style0" pcoded-navbar-position="fixed">
+                        <div class="nav-list">
+                            <div class="pcoded-inner-navbar main-menu">
+                                <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid" subitem-border="false">
+                                    <li class="">
+                                        <a href="/home" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon">
+                                                <i class="icon-menu"></i>
+                                            </span>
+                                            <span class="pcoded-mtext">Dashboard</span>
+                                        </a>
+                                    </li>
+                                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon">
+                                                    <i class="icon-devices"></i>
+                                                </span>
+                                                <span class="pcoded-mtext">Devices</span>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li class="">
+                                                    <a href="{% url 'devices:create' %}" class="waves-effect waves-dark">
+                                                        <span class="pcoded-mtext">Register Device</span>
+                                                    </a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="{% url 'devices:list' %}" class="waves-effect waves-dark">
+                                                        <span class="pcoded-mtext">Your Devices</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                    </li>
+                                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon">
+                                                    <i class="icon-projects"></i>
+                                                </span>
+                                                <span class="pcoded-mtext">Projects</span>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li class="">
+                                                    <a href="{% url 'projects:create' %}" class="waves-effect waves-dark">
+                                                        <span class="pcoded-mtext">Register Project</span>
+                                                    </a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="{% url 'projects:list' %}" class="waves-effect waves-dark">
+                                                        <span class="pcoded-mtext">Your Projects</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                    </li>
+                                    
+                                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon">
+                                                    <i class="icon-projects"></i>
+                                                </span>
+                                                <span class="pcoded-mtext">Tests</span>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li class="">
+                                                    <a href="{% url 'tests:create' %}" class="waves-effect waves-dark">
+                                                        <span class="pcoded-mtext">Register test</span>
+                                                    </a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="{% url 'tests:list' %}" class="waves-effect waves-dark">
+                                                        <span class="pcoded-mtext">Your tests</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                    </li>
 
-            <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
-          </ul>
-        </li>
-      </ul>
-    </header>
-    <!-- Sidebar menu-->
-    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-    <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
-        <div>
-          <p class="app-sidebar__user-name">{{ user.first_name }} {{ user.last_name }}</p>
-          <p class="app-sidebar__user-designation">{{ user.email }}</p>
-        </div>
-      </div>
-      <ul class="app-menu">
-        <li><a class="app-menu__item" href="/"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Devices</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="{% url 'devices:create' %}"><i class="icon fa fa-circle-o"></i> Register device</a></li>
-            <li><a class="treeview-item" href="{% url 'devices:list' %}"><i class="icon fa fa-circle-o"></i> Yours devices</a></li>
-          </ul>
-        </li>
-        
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-code"></i><span class="app-menu__label">Projects</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="{% url 'projects:create' %}"><i class="icon fa fa-circle-o"></i> Register project</a></li>
-            <li><a class="treeview-item" href="{% url 'projects:list' %}"><i class="icon fa fa-circle-o"></i> Yours projects</a></li>
-          </ul>
-        </li>
+                                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon">
+                                                    <i class="icon-projects"></i>
+                                                </span>
+                                                <span class="pcoded-mtext">Bugs</span>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li class="">
+                                                    <a href="{% url 'bugs:create' %}" class="waves-effect waves-dark">
+                                                        <span class="pcoded-mtext">Register bug</span>
+                                                    </a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="{% url 'bugs:list' %}" class="waves-effect waves-dark">
+                                                        <span class="pcoded-mtext">Your bugs</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                    </li>
 
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-tasks"></i><span class="app-menu__label">Tests</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="{% url 'tests:create' %}"><i class="icon fa fa-circle-o"></i> Register test</a></li>
-            <li><a class="treeview-item" href="{% url 'tests:list' %}"><i class="icon fa fa-circle-o"></i> Yours tests</a></li>
-          </ul>
-        </li>
-
-
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-bug"></i><span class="app-menu__label">Bugs</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="{% url 'bugs:create' %}"><i class="icon fa fa-circle-o"></i> Register bug</a></li>
-            <li><a class="treeview-item" href="{% url 'bugs:list' %}"><i class="icon fa fa-circle-o"></i> Yours bugs</a></li>
-          </ul>
-        </li>
-
-        
-        <li><a class="app-menu__item" href="/contact"><i class="app-menu__icon fa fa-envelope-o"></i><span class="app-menu__label">Contact Us</span></a></li>
-      </ul>
-    </aside>
-    <main class="app-content">
-<!--       
-      <div class="app-title">
-        <div>
-          <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
-          <p>Check your bugs of your projects in Testbridge</p>
-        </div>
-        <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-        </ul>
-      </div> -->
-
-        {% block main %}
+                                    
+                                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon">
+                                                <i class="icon-profile"></i>
+                                            </span>
+                                            <span class="pcoded-mtext">Profile</span>
+                                        </a>
+                                        <ul class="pcoded-submenu">
+                                            <li class="">
+                                                <a href="{% url 'usersapp:user_profile' user.username %}" class="waves-effect waves-dark">
+                                                    <span class="pcoded-mtext">Profile</span>
+                                                </a>
+                                            </li>
+                                            <!--li class="">
+                                                <a href="{% url 'projects:list' %}" class="waves-effect waves-dark">
+                                                    <span class="pcoded-mtext">Your Projects</span>
+                                                </a>
+                                            </li-->
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/contact" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon">
+                                                <i class="icon-contactUs"></i>
+                                            </span>
+                                            <span class="pcoded-mtext">Contact Us</span>
+                                        </a>
+                                    </li>  
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">                    
+                        {% block main %}
           
-        {% endblock main %}
-      
-
-    </main>
-    <!-- Essential javascripts for application to work-->
-    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-    <!-- The javascript plugin to display page loading on top-->
-    <script src="{% static 'js/plugins/pace.min.js' %}"></script>
-    <!-- Google analytics script-->
-    <script type="text/javascript">
-      if(document.location.hostname == 'pratikborsadiya.in') {
-      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      	ga('create', 'UA-72504830-1', 'auto');
-      	ga('send', 'pageview');
-      }
-    </script>
-  </body>
+                        {% endblock main %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

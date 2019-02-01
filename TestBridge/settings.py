@@ -146,7 +146,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #new MIF 10/dic/2018
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/home'
 LOGOUT_REDIRECT_URL = '/'
 
 REST_FRAMEWORK = {

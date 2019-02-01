@@ -1,0 +1,52 @@
+{% extends 'TestBridgeApp/start.html' %}
+{% block main %}
+<div>
+        <div id="videoDiv">
+              <div id="video">           
+                  <video preload="preload" id="video" autoplay="autoplay" loop="loop">
+                      <source src="../../static/video/Walking-Heads.webm" type="video/webm"></source>
+                      <source src="../../static/video/Walking-Heads.mp4" type="video/mp4"></source>
+                  </video> 
+              </div>
+              <div id="messageBox"> 
+                  <div >
+                      <div>
+                          <h1 class="hvd text-center">For better quality software</h1>
+                          <h1 class="hvd2 text-center">At TestBridge, we test your software with real users, on real devices, and in real-world conditions.</h1> 
+                          <h1 class="hvd2 text-center">Discover the problems and critical failures before you can affect the experience of your customers and </h1>
+                          <h1 class="hvd2 text-center">the success of your business. This guarantees that your digital products are always of high quality</h1>
+                          <h1 class="hvd2 text-center"> and that from the user's point of view they work as desired.</h1>
+                      </div>
+                  </div>
+              </div>   
+        </div>
+      </div>
+      <div class="container">
+        <h1 class="my-4 text-center line-head30">Welcome to Modern Business</h1>
+        <h1 class="my-4 text-center line-headUp">Real Devices. Real People. Real Fast.</h1>
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Powered by people</h2>
+                <p>Know for sure: skilled testers ensure your app, website, or SaaS platform works as your customers expect, every release.</p>
+                <h2>Devices galore</h2>
+                <p>Real-world experience: our testers have exactly the devices, OS’s, and browsers you need.</p>
+                <h2>Results in as soon as an hour</h2>
+                <p>No more waiting: receive thorough reports with video reproductions in as soon as an hour.</p>
+            </div>
+            <div class="col-lg-6">
+                <img class="img-fluid rounded" src="../../static/images/image1.JPG">
+            </div>
+        </div>
+        <hr>
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <p>Great software companies like Facebook and Google perform thousands of hours of manual QA testing every month. Their secret? Their non-technical employees and then their customers are the testers. Alas, most teams don’t have that luxury. Crowdtesting with test IO levels the playing field, giving your team access to thousands of QA testers who can make sure your software is ready to ship.</p>
+            </div>
+            <div class="col-md-4">
+            <a class="btn btn-lg btn-secondary btn-block" href="#">Learn More</a>
+            </div>
+        </div>
+      </div>
+      <div>
+
+{% endblock %}
