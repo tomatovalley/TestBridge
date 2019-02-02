@@ -1,190 +1,57 @@
 {% extends 'base.html' %}
-
-{% block main %}
-
-
-
-
-
-<div class="row">
-	<div class="col-md-6 col-lg-3">
-	  <div class="widget-small primary coloured-icon"><i class="icon fa fa-mobile fa-3x"></i>
-		<div class="info">
-		  <h4>Devices</h4>
-		  <p><b>{{devices}}</b></p>
-		</div>
-	  </div>
-	</div>
-	<div class="col-md-6 col-lg-3">
-	  <div class="widget-small primary coloured-icon"><i class="icon fa fa-code fa-3x"></i>
-		<div class="info">
-		  <h4>Projects</h4>
-		  <p><b>{{projects}}</b></p>
-		</div>
-	  </div>
-	</div>
-	<div class="col-md-6 col-lg-3">
-	  <div class="widget-small primary coloured-icon"><i class="icon fa fa-tasks fa-3x"></i>
-		<div class="info">
-		  <h4>Tests</h4>
-		  <p><b>10</b></p>
-		</div>
-	  </div>
-	</div>
-	<div class="col-md-6 col-lg-3">
-	  <div class="widget-small primary coloured-icon"><i class="icon fa fa-bug fa-3x"></i>
-		<div class="info">
-		  <h4>Bugs</h4>
-		  <p><b>500</b></p>
-		</div>
-	  </div>
-	</div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="page-header card">
-
-    </div>
-                
-                        <div class="pcoded-inner-content">
-                        <div class="main-body">
-                                <div class="page-wrapper">
-                
-                                    <div class="page-body">
-                                        <div class="row">
-                                                <div class="col-lg-12">
-
-
-                                                        <div class="card">
-                                                        <div class="card-header">
-                                                        <h5>Sample Block</h5>
-                                                        <div class="card-header-right">
-                                                        <ul class="list-unstyled card-option">
-                                                        <li><i class="icofont icofont-simple-left "></i></li>
-                                                        <li><i class="icofont icofont-maximize full-card"></i></li>
-                                                        <li><i class="icofont icofont-minus minimize-card"></i></li>
-                                                        <li><i class="icofont icofont-refresh reload-card"></i></li>
-                                                        <li><i class="icofont icofont-error close-card"></i></li>
-                                                        </ul>
-                                                        </div>
-                                                        </div>
-      <div class="card-block">
-          <div class="row">
-              <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                  <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      <a href="#">Project One</a>
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
-                  </div>
+{% block main %}            
+<div class="pcoded-inner-content">
+  <div class="main-body">
+    <div class="page-wrapper">
+      <div class="page-body">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-3">
+              <div class="widgetDashboard primary coloured-icon">
+                <div class="iconDiv" >
+                  <i class="icon-devices"></i>
+                </div>
+                <div class="info">
+                  <h4>Devices</h4>
+                  <p><b>{{devices}}</b></p>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                  <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      <a href="#">Project Two</a>
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                  </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+              <div class="widgetDashboard primary coloured-icon">
+                <div class="iconDiv" >
+                  <i class="icon-projects"></i>
+                </div>
+                <div class="info">
+                  <h4>Projects</h4>
+                  <p><b>{{projects}}</b></p>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                  <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      <a href="#">Project Three</a>
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-                  </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+              <div class="widgetDashboard primary coloured-icon">
+                <div class="iconDiv" >
+                  <i class="icon-tests"></i>
+                </div>
+                <div class="info">
+                  <h4>Tests</h4>
+                  <p><b>10</b></p>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                  <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      <a href="#">Project Four</a>
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                  </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+              <div class="widgetDashboard primary coloured-icon">
+                <div class="iconDiv" >
+                  <i class="icon-bugs"></i>
+                </div>
+                <div class="info">
+                  <h4>Bugs</h4>
+                  <p><b>20</b></p>
                 </div>
               </div>
-      
-      
-      
-              
-              <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                  <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      <a href="#">Project Five</a>
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                  <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      <a href="#">Project Six</a>
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                  <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      <a href="#">Project Seven</a>
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-                <div class="card h-100">
-                  <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      <a href="#">Project Eight</a>
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius adipisci dicta dignissimos neque animi ea, veritatis, provident hic consequatur ut esse! Commodi ea consequatur accusantium, beatae qui deserunt tenetur ipsa.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-      
-      
-      
-
+          </div>
+        </div>
       </div>
-                                                        </div>
-                                                        
-                                                    </div>
-
-                                    </div>
-                                </div>
-                
-                            </div>
-                        </div>
-                        {% endblock %}
+    </div>
+  </div>            
+</div>
+{% endblock %}
