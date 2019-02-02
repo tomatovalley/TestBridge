@@ -18,17 +18,17 @@ from django.db.models import Q
 
 def list(request):
     devices=Device.objects.filter(user=request.user)
-    return render(request, template_name='Devices.html',context={'devices':devices})
+    return render(request, template_name='Devices/Devices.html',context={'devices':devices})
 
 def query(request, pk):
     devices=Device.objects.get(id=pk,user=request.user)
-    return render(request, template_name='read.html',context={'devices':devices})
+    return render(request, template_name='Devices/read.html',context={'devices':devices})
 
 class CreateDevices(SuccessMessageMixin, CreateView):
     model=Device
     success_message = "The device %(device)s has been created"
     form_class=DeviceForm
-    template_name='create.html'
+    template_name='Devices/create.html'
 
     def get_initial(self):
         return {
@@ -51,7 +51,7 @@ class DeleteDevices(SuccessMessageMixin, DeleteView):
     model=Device
     success_message = "The device %(device)s has been removed"
     form_class=DeviceForm
-    template_name='devices/delete.html'
+    template_name='Devices/delete.html'
 
     def get_context_data(self, **kwargs):
         context_data = super(DeleteDevices, self).get_context_data(**kwargs)

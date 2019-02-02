@@ -1,23 +1,9 @@
-{% extends 'base.html' %}
-
-
-{% block main %}
-
-<div class="app-title">
-    <ul class="app-breadcrumb breadcrumb">
-        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><span class="breadcrumb-item active">List of tests</span></li>
-    </ul>
-</div>
-
-<div class="row">
+{% extends 'base.html' %}{% block main %}
+<div class="row justify-content-center">
     <div class="clearfix"></div>
-    <div class="col-md-12">
+    <div class="col-md-8">
         <div class="tile">
-
             <h3 class="tile-title">List of tests</h3>
-
             {% if messages %}
             {% for message in messages %}
             <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
@@ -28,7 +14,6 @@
             </div>
             {% endfor %}
             {% endif %}
-
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -59,8 +44,4 @@
             </div>
         </div>
     </div>
-</div>
-
-
-
-{% endblock main %}
+</div>{% endblock main %}
