@@ -291,6 +291,9 @@
 .icon-contactUs:before{content:url("/static/ico/baseline-perm_phone_msg-24px.svg")}
 .icon-devices:before{content:url("/static/ico/baseline-devices-24px.svg");}
 .icon-projects:before{content:url("/static/ico/baseline-dvr-24px.svg");}
+.icon-tests:before{content:url("/static/ico/baseline-assignment-24px.svg");}
+.icon-bugs:before{content:url("/static/ico/baseline-bug_report-24px.svg");}
+.icon-settings:before{content: url("/static/ico/baseline-settings-20px.svg")}
 .icon-chevron-down:before{content:url("/static/ico/ico/baseline-expand_more-24px.svg");}
 .icon-chevron-left:before{content:url("/static/ico/ico/48_rosa.png");}
 .icon-chevron-right:before{content:url("/static/ico/ico/baseline-chevron_right-24px.svg");}
