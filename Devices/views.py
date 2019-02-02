@@ -18,7 +18,7 @@ from django.db.models import Q
 
 def list(request):
     devices=Device.objects.filter(user=request.user)
-    return render(request, template_name='Devices/Devices.html',context={'devices':devices})
+    return render(request, template_name='Devices/devices.html',context={'devices':devices})
 
 def query(request, pk):
     devices=Device.objects.get(id=pk,user=request.user)
