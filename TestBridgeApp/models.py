@@ -2,6 +2,10 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.contrib.auth.models import User
+from django.conf import settings
+
+from Projects.models import Project
 
 class Page(models.Model):
   title = models.CharField(max_length=60)
@@ -15,8 +19,6 @@ class Page(models.Model):
   def __unicode__(self):
     return self.title
 
-
-
-
-
-
+class ProjectsTester(models.Model):
+  user=models.ForeignKey(settings.AUTH_USER_MODEL)
+  project=models.ForeignKey(Project,on_delete=models.CASCADE)

@@ -31,12 +31,12 @@
                     <div class="navbar-container container-fluid">
                         <ul class="nav-left">
                             <li>
-                                <a class="mobile-menu" id="toggleSideBar" href="#!">
+                                <a class="mobile-menu" id="toggleSideBar">
                                     <i class="icon-toggle-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
+                                <a onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
                                     <i class="full-screen icon-maximize"></i>
                                 </a>
                             </li>
@@ -78,6 +78,7 @@
                                             <span class="pcoded-mtext">Dashboard</span>
                                         </a>
                                     </li>
+                                    {% if userInfo.user_type == 'TESTER' %}
                                     <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                                             <a href="javascript:void(0)" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon">
@@ -98,6 +99,8 @@
                                                 </li>
                                             </ul>
                                     </li>
+                                    {% endif %}
+                                    {% if userInfo.user_type == 'CLIENT' %}
                                     <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                                             <a href="javascript:void(0)" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon">
@@ -118,7 +121,8 @@
                                                 </li>
                                             </ul>
                                     </li>
-                                    
+                                    {% endif %}
+                                    {% if userInfo.user_type == 'TESTER' %}
                                     <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                                             <a href="javascript:void(0)" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon">
@@ -161,6 +165,23 @@
                                             </ul>
                                     </li>
 
+
+                                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon">
+                                                    <i class="icon-bugs"></i>
+                                                </span>
+                                                <span class="pcoded-mtext">Customers</span>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li class="">
+                                                        <a href="{% url 'testbridgeapp:customers' %}" class="waves-effect waves-dark">
+                                                        <span class="pcoded-mtext">Projects</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                    </li>
+                                    {% endif %}
                                     
                                     <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
@@ -196,7 +217,7 @@
                     </nav>
                     <div class="pcoded-content">                    
                         {% block main %}
-          
+                        
                         {% endblock main %}
                     </div>
                 </div>

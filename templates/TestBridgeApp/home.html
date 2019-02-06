@@ -1,57 +1,65 @@
 {% extends 'base.html' %}
-{% block main %}            
+{% block main %}
 <div class="pcoded-inner-content">
   <div class="main-body">
     <div class="page-wrapper">
       <div class="page-body">
         <div class="row justify-content-center">
+
+          {% if userInfo.user_type == 'CLIENT' %}
           <div class="col-md-6 col-lg-3">
-              <div class="widgetDashboard primary coloured-icon">
-                <div class="iconDiv" >
-                  <i class="icon-devices"></i>
-                </div>
-                <div class="info">
-                  <h4>Devices</h4>
-                  <p><b>{{devices}}</b></p>
-                </div>
+            <div class="widgetDashboard primary coloured-icon">
+              <div class="iconDiv">
+                <i class="icon-projects"></i>
               </div>
+              <div class="info">
+                <h4>Projects</h4>
+                <p><b>{{projects}}</b></p>
+              </div>
+            </div>
           </div>
+          {% endif %}
+
+          {% if userInfo.user_type == 'TESTER' %}
           <div class="col-md-6 col-lg-3">
-              <div class="widgetDashboard primary coloured-icon">
-                <div class="iconDiv" >
-                  <i class="icon-projects"></i>
-                </div>
-                <div class="info">
-                  <h4>Projects</h4>
-                  <p><b>{{projects}}</b></p>
-                </div>
+            <div class="widgetDashboard primary coloured-icon">
+              <div class="iconDiv">
+                <i class="icon-devices"></i>
               </div>
+              <div class="info">
+                <h4>Devices</h4>
+                <p><b>{{devices}}</b></p>
+              </div>
+            </div>
           </div>
+
           <div class="col-md-6 col-lg-3">
-              <div class="widgetDashboard primary coloured-icon">
-                <div class="iconDiv" >
-                  <i class="icon-tests"></i>
-                </div>
-                <div class="info">
-                  <h4>Tests</h4>
-                  <p><b>10</b></p>
-                </div>
+            <div class="widgetDashboard primary coloured-icon">
+              <div class="iconDiv">
+                <i class="icon-tests"></i>
               </div>
+              <div class="info">
+                <h4>Tests</h4>
+                <p><b>{{tests}}</b></p>
+              </div>
+            </div>
           </div>
+
           <div class="col-md-6 col-lg-3">
-              <div class="widgetDashboard primary coloured-icon">
-                <div class="iconDiv" >
-                  <i class="icon-bugs"></i>
-                </div>
-                <div class="info">
-                  <h4>Bugs</h4>
-                  <p><b>20</b></p>
-                </div>
+            <div class="widgetDashboard primary coloured-icon">
+              <div class="iconDiv">
+                <i class="icon-bugs"></i>
               </div>
+              <div class="info">
+                <h4>Bugs</h4>
+                <p><b>{{bugs}}</b></p>
+              </div>
+            </div>
           </div>
+          {% endif %}
         </div>
       </div>
     </div>
-  </div>            
+  </div>
 </div>
 {% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="row justify-content-center">
+  <div class="col-md-12">
+    <div class="tile">
+      <div class="tile-body">
+        <table class="table table-hover table-bordered" id="sampleTable">
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Project</th>
+              <th>Type</th>
+              <th>Budget</th>
+              <th>Pay per bug</th>
+              <th>Published ago</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            {% for x in projects %}
+            <tr>
+              <td>{{x.user.get_full_name}}</td>
+              <td>
+                <a href="{% url 'testbridgeapp:query' x.id %}">{{x.project}}</a>
+              </td>
+              <td>{{x.type}}</td>
+              <td>$ {{x.budget}}</td>
+              <td>$ {{x.payPerBug}}</td>
+              <td>{{x.creationDate|timesince}}</td>
+              <td>
+                <a href="{% url 'testbridgeapp:save' x.id %}" class="btn btn-primary">Take project</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Data table plugin-->
+<script type="text/javascript" src="/static/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/static/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript">
+  $('#sampleTable').DataTable();
+</script>
+{% endblock main %}
