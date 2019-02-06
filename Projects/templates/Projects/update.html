@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% extends 'base.html' %}{% block main %}
 <div class="row justify-content-center">
     <div class="col-md-8">
@@ -41,48 +40,4 @@
             </form>
         </div>
     </div>
-=======
-{% extends 'base.html' %}{% block main %}
-<div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="tile">
-            <form method="post">
-                <h3 class="tile-title">Edit project</h3>
-                <div class="tile-body">
-                    {% csrf_token %}
-                    {% for hidden in form.hidden_fields %}
-                    {{hidden}}
-                    {% endfor %}
-                    <div class="form-group">
-                        <label for="{{form.status.id_for_label}}" class="control-label">{{form.status.label}}</label>
-                        {{form.status}}
-                    </div>
-                    <div class="form-group">
-                        <label for="{{form.location.id_for_label}}" class="control-label">{{form.location.label}}</label>
-                        {{form.location}}
-                    </div>
-                    <div class="form-group">
-                        <label for="{{form.features.id_for_label}}" class="control-label">{{form.features.label}}</label>
-                        {{form.features}}
-                    </div>
-                    <div class="form-group">
-                        <label for="{{form.payPerBug.id_for_label}}" class="control-label">{{form.payPerBug.label}}</label>
-                        {{form.payPerBug}}
-                    </div>
-                </div>
-                <div class="tile-footer">
-                    <button class="btn btn-primary" type="submit" name="submit">
-                        <i class="fa fa-fw fa-lg fa-check-circle"></i>
-                        Edit
-                    </button>
-                    &nbsp;&nbsp;&nbsp;
-                    <a class="btn btn-secondary" href="{% url 'projects:list' %}">
-                        <i class="fa fa-fw fa-lg fa-times-circle"></i>
-                        Cancel
-                    </a>
-                </div>
-            </form>
-        </div>
-    </div>
->>>>>>> 1e76af9444df3aa6779f6bd26b224af9d9dea43c
 </div>{% endblock main %}
