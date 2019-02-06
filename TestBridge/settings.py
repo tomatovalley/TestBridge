@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'Projects',
     'Tests',
     'Bugs',
+    'avatar',
 ]
 
 MIDDLEWARE = [

@@ -36,4 +36,5 @@ urlpatterns = [
     url(r'^devices/', include('Devices.urls',namespace='devices')),
     url(r'^tests/', include('Tests.urls',namespace='tests')),
     url(r'^bugs/', include('Bugs.urls',namespace='bugs')),
+    url('avatar/', include('avatar.urls')),
 ] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

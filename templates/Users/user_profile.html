@@ -6,7 +6,7 @@
 				<div class="row justify-content-center">								
 					<div class="col-md-8">									
 						<div class="tile">										
-							<form method="post">											
+							<form method="post"  enctype="multipart/form-data">											
 								<h3 class="tile-title">Profile</h3>											
 								<div class="tile-body">
 									{% csrf_token %}							
@@ -17,6 +17,7 @@
 									{% csrf_token %}
 									{{ user_form.as_p }}
 									{{ profile_form.as_p }}
+									<a href="{% url 'avatar_change' %}">Change your avatar</a><br><br>
 									<a class="badge badge-dark" href="{% url 'usersapp:user_delete' user_form.username.value%}"> 
 										Deactivate account
 									</a>

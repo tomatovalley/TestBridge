@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load avatar_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,9 +45,9 @@
                         <ul class="nav-right">
                             <li>
                                 <span>
-                                    <img src="/static//images/avatar.jpg" class="img-radius margin-imgs" alt="User-Profile-Image">
+                                    {% avatar user 55 class="img-circle img-responsive" id="user_avatar" alt="User-Profile-Image" %}
                                 </span>
-                                <span class="hvd4">{{ user.first_name }} {{ user.last_name }}</span>
+                                <span class="hvd4">&nbsp;&nbsp;{{ user.first_name }} {{ user.last_name }}</span>
                             </li>
                             <li>
                                 <a href="{% url 'usersapp:user_profile' user.username %}">
