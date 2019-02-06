@@ -4,10 +4,10 @@
 
 <form method="POST">
 {{ formset.management_form }}
-    <div class="row">
+    <div class="row justify-content-center">
 
         {% for form in formset %}
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="tile">
                     <br>
                     <h3>Functionality {{forloop.counter}}</h3>
@@ -22,11 +22,11 @@
             
     </div>
 
-    <div class="row">
-        <div class="col-md-6 mt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-3 ">
             <button class="btn btn-primary btn-lg btn-block" type="submit">Save</button>
         </div>
-        <div class="col-md-6 mt-2">
+        <div class="col-md-3">
             <a class="btn btn-success btn-lg btn-block" href="{% url 'list' %}">Finish</a>
         </div>
     </div>

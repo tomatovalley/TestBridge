@@ -11,11 +11,13 @@
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <link rel="stylesheet" type="text/css" href="/static/css/start_test.css">
     <link rel="stylesheet" type="text/css" href="/static/css/mainsinavbar.css">
+    
     <script type="text/javascript" src="/static/js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="/static/js/bootstrap.js"></script>
     <script src="/static/js/pcoded.js"></script>
     <script src="/static/js/script.js"></script>
     <script src="/static/js/menu-compact.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body style="background-color:#edf4f5" >  
     <div id="pcoded" class="pcoded iscollapsed" nav-type="st2" theme-layout="vertical" vertical-placement="left" vertical-layout="wide" pcoded-device-type="desktop" vertical-nav-type="collapsed" vertical-effect="overlay" vnavigation-view="view1" fream-type="theme1" layout-type="light">
@@ -165,21 +167,13 @@
                                             </ul>
                                     </li>
 
-
-                                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
-                                            <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon">
-                                                    <i class="icon-bugs"></i>
-                                                </span>
-                                                <span class="pcoded-mtext">Customers</span>
-                                            </a>
-                                            <ul class="pcoded-submenu">
-                                                <li class="">
-                                                        <a href="{% url 'testbridgeapp:customers' %}" class="waves-effect waves-dark">
-                                                        <span class="pcoded-mtext">Projects</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                    <li>
+                                        <a href="{% url 'testbridgeapp:customers' %}" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon">
+                                                <i class="icon-projects"></i>
+                                            </span>
+                                            <span class="pcoded-mtext">Projects</span>
+                                        </a>
                                     </li>
                                     {% endif %}
                                     
