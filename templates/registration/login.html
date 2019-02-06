@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -74,4 +75,82 @@
       });
     </script>
   </body>
+=======
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mainsinavbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="/static/css/start_test.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Login - Testtbridge</title>
+  </head>
+  <style>
+    h1{
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+    }
+    
+  </style>
+  <body>
+    <section class="material-half-bg">
+      <div class="cover"></div>
+    </section>
+    <section class="login-content">
+      <div class="logo">
+        <a class="app-header__SigIn" href="/">
+          <img class="" src="/static/images/logoblanco.png" alt="TESTBRIDGE">
+        </a>
+      </div>
+      <div class="login-box">
+        <form class="login-form" method="post">
+            {% csrf_token %}
+		  <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3>
+		  
+          <div class="form-group">
+            <label class="control-label">USERNAME</label>
+            <input class="form-control" type="text" name="{{ form.username.html_name }}" autofocus>
+          </div>
+          <div class="form-group">
+            <label class="control-label">PASSWORD</label>
+            <input class="form-control" type="password" name="{{ form.password.html_name }}">
+		      </div>
+      
+          <div class="form-group">
+            <div class="utility">
+              <div class="animated-checkbox">
+                <label>
+                  <span class="label-text">Not registered yet?</span>
+                </label>
+              </div>
+              <p class="semibold-text mb-2"><a href="{% url 'usersapp:user_register' %}">Register here</a></p>
+            </div>
+          </div>
+          <div class="form-group btn-container">
+            <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN IN</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Essential javascripts for application to work-->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="{% static 'js/plugins/pace.min.js' %}"></script>
+    <script type="text/javascript">
+      // Login Page Flipbox control
+      $('.login-content [data-toggle="flip"]').click(function() {
+      	$('.login-box').toggleClass('flipped');
+      	return false;
+      });
+    </script>
+  </body>
+>>>>>>> 1e76af9444df3aa6779f6bd26b224af9d9dea43c
 </html>

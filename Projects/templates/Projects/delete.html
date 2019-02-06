@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}{% block main %}
 <div class="row justify-content-center">
     <div class="col-md-8">
@@ -14,4 +15,22 @@
             </form>
         </div>
     </div>
+=======
+{% extends 'base.html' %}{% block main %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="tile">
+            <form method="post" class="form-horizontal">
+                {% csrf_token %}
+                <p class="align-center text-danger">
+                    Are you sure you want to delete the project {{project.project}}?
+                </p>
+                <div class="form-group">
+                    <input class="btn btn-danger" type="submit" name="submit" value="Yes">
+                    <a class="btn btn-secondary" href="{% url 'projects:list' %}">No</a>
+                </div>        
+            </form>
+        </div>
+    </div>
+>>>>>>> 1e76af9444df3aa6779f6bd26b224af9d9dea43c
 </div>{% endblock main %}
