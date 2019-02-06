@@ -27,7 +27,7 @@ def user_edit(request, username):
   submitted = False
   if request.method == 'POST':
     user_form = UserEditForm(request.POST,instance=User.objects.get(username=username))
-    profile_form = UserProfileForm(request.POST,instance=Tb_user.objects.get(username=username))
+    profile_form = UserProfileForm(request.POST,request.FILES,instance=Tb_user.objects.get(username=username))
 
     if all([user_form.is_valid(), profile_form.is_valid()]):
        user_form.save()

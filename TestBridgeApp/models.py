@@ -22,3 +22,4 @@ class Page(models.Model):
 class ProjectsTester(models.Model):
   user=models.ForeignKey(settings.AUTH_USER_MODEL)
   project=models.ForeignKey(Project,on_delete=models.CASCADE)
+
