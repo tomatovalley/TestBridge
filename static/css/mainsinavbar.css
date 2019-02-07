@@ -594,8 +594,10 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+}
+.nomargin {
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
 .no-gutters {
@@ -1355,6 +1357,8 @@ pre code {
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
     max-width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .order-lg-first {
     -webkit-box-ordinal-group: 0;
@@ -13733,6 +13737,10 @@ be a descendant of the grid when it is being dragged.
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+.tile2 {
+
+  margin-top: 20px;
 }
 
 @media print {
