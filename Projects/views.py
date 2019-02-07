@@ -47,11 +47,6 @@ class CreateProject(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return {
              'user': self.request.user
         }
-    
-    def get_form(self, *args, **kwargs):
-        form = super(CreateProject, self).get_form(*args, **kwargs)
-        form.fields['device'].queryset = Device.objects.filter(user=self.request.user.id)
-        return form
 
     def get_success_url(self):
         return reverse('projects:functionalities',args=(self.object.id,))
