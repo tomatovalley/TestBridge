@@ -109,7 +109,7 @@ class ProjectApiCQ(mixins.CreateModelMixin, generics.ListAPIView):
     serializer_class        = ProjectsSerializer
 
     def get_queryset(self):
-        qs = Project.objects.filter(user=self.request.user.id)
+        qs = Project.objects.all()
         query = self.request.GET.get("q")
         if query is not None:
             qs = qs.filter(
