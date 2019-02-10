@@ -429,6 +429,7 @@ img {
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .tile .tile-title-w-btn {
@@ -528,4 +529,42 @@ img {
 .widgetDashboard .info p {
 	margin: 0;
 	font-size: 16px;
+}
+
+.checkImg input {
+	display: none;
+}
+.checkImg li{
+	display: inline;
+	text-align: center;
+}
+.checkImg img {
+	width: 80px;
+	border: 3px solid transparent;
+}
+.checkImg input:checked  + img {
+	border-color: #036169;
+}
+
+
+
+
+
+
+.btnforinput {
+	font-size: 14px;
+	font-weight: 600;
+	color: #fff;
+	background-color: #036169;
+	display: inline-block;
+	transition: all .5s;
+	cursor: pointer;
+	padding: 10px 10px !important;
+	text-transform: uppercase;
+	width: fit-content;
+	text-align: center;
+	margin-bottom: 0rem !important;
+}
+.btnforinput label{
+	margin-bottom: 0rem !important;
 }
