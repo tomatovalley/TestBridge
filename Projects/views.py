@@ -20,6 +20,8 @@ from django.forms.widgets import Textarea, TextInput, CheckboxInput
 
 from rest_framework import generics, mixins
 from Projects.serializers import ProjectsSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from django.db.models import Q
 
 from Devices.models import Device
@@ -109,7 +111,7 @@ class ProjectApiCQ(mixins.CreateModelMixin, generics.ListAPIView):
     serializer_class        = ProjectsSerializer
 
     def get_queryset(self):
-        qs = Project.objects.all()
+        qs = Project.objects.filter(user=self.request.user.id)
         query = self.request.GET.get("q")
         if query is not None:
             qs = qs.filter(
@@ -133,3 +135,27 @@ class ProjectApiRUD(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return Project.objects.all()
+
+class projectsUser(APIView):
+
+    def get(self, request):
+        projects=Project.objects.filter(user=request.user)
+        
+        content = {
+            'User':{
+            'username': x.user.username,
+                'Project':[
+                    {
+                        'id':x.id, 
+                        'project':x.project, 
+                        'type':x.type,
+                        'location':x.location,
+                        'payPerBug':x.payPerBug,
+                        'status':x.status
+                    }
+                    for x in projects
+                ]
+            }
+            for x in projects
+        }
+        return Response(content)

@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^delete/(?P<pk>\d+)/$',views.DeleteDevices.as_view(),name='delete'),
     url(r'^query/(?P<pk>\d+)/$',views.query,name='query'),
     
+    url(r'^devicesUser/$',views.DevicesUser.as_view(),name='devicesUser'),
     url(r'^devices/$',views.DeviceApiCQ.as_view(),name='devicesCQ'),
     url(r'^devices/(?P<pk>\d+)/$',views.DeviceApiRUD.as_view(),name='devicesRUD'),
 ]

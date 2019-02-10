@@ -11,6 +11,7 @@ urlpatterns = [
     
     url(r'^functionalities/(?P<project_id>\d+)/$', views.functionalities, name='functionalities'),
     
+    url(r'^projectsUser/$',views.projectsUser.as_view(),name='projectsUser'),
     url(r'^projects/$',views.ProjectApiCQ.as_view(),name='projectCQ'),
     url(r'^projects/(?P<pk>\d+)/$',views.ProjectApiRUD.as_view(),name='projectRUD'),
 

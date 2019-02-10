@@ -11,9 +11,15 @@ from django.core.urlresolvers import reverse
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 
-from rest_framework import generics, mixins
+from rest_framework import generics, mixins, viewsets
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import authentication, permissions
+
+from django.contrib.auth.models import User
 from Devices.serializers import DevicesSerializer
 from django.db.models import Q
+
 # Create your views here.s
 
 def list(request):
@@ -96,3 +102,25 @@ class DeviceApiRUD(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return Device.objects.all()
+
+class DevicesUser(APIView):
+
+    def get(self, request):
+        devices=Device.objects.filter(user=request.user)
+        
+        content = {
+            'User':{
+            'username': x.user.username,
+                'Device':[
+                    {
+                        'device':x.device, 
+                        'category':x.category, 
+                        'os':x.os,
+                        'version':x.version
+                    }
+                    for x in devices
+                ]
+            }
+            for x in devices
+        }
+        return Response(content)
