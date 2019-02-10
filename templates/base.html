@@ -47,7 +47,7 @@
                         <ul class="nav-right">
                             <li>
                                 <span>
-                                    {% avatar user 55 class="img-circle img-responsive" id="user_avatar" alt="User-Profile-Image" %}
+                                    <a href="{% url 'avatar_change' %}">{% avatar user  class="img-radius" %}</a>
                                 </span>
                                 <span class="hvd4">&nbsp;&nbsp;{{ user.first_name }} {{ user.last_name }}</span>
                             </li>

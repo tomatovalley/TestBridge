@@ -48,3 +48,4 @@ def user_delete(request, username):
   except Exception as e:
      raise Http404
   return redirect('testbridgeapp:home')
+
