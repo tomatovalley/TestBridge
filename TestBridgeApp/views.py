@@ -17,17 +17,19 @@ def home(request):
   devices=Device.objects.filter(user=request.user.id).count()
   projects=Project.objects.filter(user=request.user.id).count()
   bugs=Bug.objects.filter(user=request.user.id).count()
-
+  projectsTester=ProjectsTester.objects.filter(user=request.user)
   context={
     'devices':devices,
     'projects':projects,
     'bugs':bugs,
+    'projectsTester':projectsTester,
   }
 
   return render(request,"TestBridgeApp/home.html", context)
 
 def projectsCustomers(request):
-  projects=Project.objects.filter(type='Web').order_by('-creationDate')
+  # projects=Project.objects.filter(type='Web').order_by('-creationDate')
+  projects=Project.objects.all().order_by('-creationDate')
   return render(request,"TestBridgeApp/projectsCustomers.html", {'projects':projects})
 
 def query(request, pk):
@@ -39,6 +41,10 @@ def query(request, pk):
 def saveProject(request, pk):
   projects=ProjectsTester.objects.create(user=request.user, project_id=pk)
   return redirect('testbridgeapp:customers')
+
+def deleteProject(request, pk):
+  ProjectsTester.objects.get(id=pk).delete()
+  return redirect('testbridgeapp:home')
 
 def start(request):
   return render(request,"TestBridgeApp/start_home.html")

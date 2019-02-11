@@ -57,6 +57,36 @@
           </div>
           {% endif %}
         </div>
+
+        <div class="row justify-content-center">
+          {% for x in projectsTester %}
+
+          <div class="col-md-4">
+            <div class="tile">
+              <div class="tile-title-w-btn">
+                <h3 class="title">{{x.project}}</h3>
+                <div class="btn-group">
+                  <a class="btn btn-primary" href="{% url 'testbridgeapp:query' x.project.id %}"><i class="fa fa-lg fa-list-alt"></i></a>
+                  <a class="btn btn-primary" href="{% url 'testbridgeapp:delete' x.id %}"><i class="fa fa-lg fa-trash"></i></a>
+                </div>
+              </div>
+              <h5>Description:</h5>
+              {{x.project.features|linebreaks}}
+
+              <h5>Location:</h5>
+              <a href="{{x.project.location}}" target="blank">{{x.project.location}}</a>
+
+              <div class="tile-footer">
+                <h5>Customer:</h5>
+                <p>{{x.project.user.get_full_name}}</p>
+              </div>
+
+            </div>
+          </div>
+
+          {% endfor %}
+        </div>
+
       </div>
     </div>
   </div>

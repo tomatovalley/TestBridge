@@ -12,7 +12,8 @@ urlpatterns = [
      url(r'^solutions/$', views.testingSolutions, name='solutions'),
      url(r'^testing/$', views.testing, name='testing'),
      url(r'^projectsCustomers/$', views.projectsCustomers, name='customers'),
-     url(r'^projectsCustomers/project/(?P<pk>\d+)$', views.query, name='query'),
-     url(r'^save/(?P<pk>\d+)/$', views.saveProject, name='save'),
+     url(r'^project/(?P<pk>\d+)$', views.query, name='query'),
+     url(r'^project/save/(?P<pk>\d+)/$', views.saveProject, name='save'),
+     url(r'^home/delete/(?P<pk>\d+)/$', views.deleteProject, name='delete'),
      url(r'^$', views.start, name='start'),
 ]
